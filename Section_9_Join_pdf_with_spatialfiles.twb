@@ -1,0 +1,2591 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='New York Crime Stats with Geometry' inline='true' name='federated.15adfwm0q2prc31c5mqy90bwjx4j' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='P1-nyc-park-crime-stats-q1-2018' name='pdf.1bpi91w199jf1h1drwjy71b2hcdm'>
+            <connection class='pdf' cleaning='yes' compat='no' dataRefreshTime='' directory='' interpretationMode='257' origfilename='C:/Users/POORNAKALAI/Downloads/Tableau/P1-nyc-park-crime-stats-q1-2018.pdf' password='' pgFrom='' pgTo='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='NYC Parks and Public Spaces' name='ogrdirect.0j3f4do00vkq3e1a7jyw00rdxit7'>
+            <connection class='ogrdirect' directory='C:/Users/POORNAKALAI/Downloads/Tableau/P1-NYC-Parks-and-Public-Spaces-Spatial-Files/NYC Parks and Public Spaces -  Spatial Files' filename='NYC Parks and Public Spaces.shp' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Project].[Park &amp; F1]' />
+              <expression op='[NYC Parks and Public Spaces.shp].[name311]' />
+            </expression>
+          </clause>
+          <relation type='project'>
+            <columns>
+              <column caption='Park' hidden='true' name='[Page    1 Table  1+].[PARK]' />
+              <column caption='F1' hidden='true' name='[Page    1 Table  1+].[F1]' />
+              <column name='[Project].[Park &amp; F1]' project-type='coalesce' />
+            </columns>
+            <bindings>
+              <binding expression='IF NOT ISNULL([Page    1 Table  1+].[PARK]) THEN [Page    1 Table  1+].[PARK]&#10;ELSEIF NOT ISNULL([Page    1 Table  1+].[F1]) THEN [Page    1 Table  1+].[F1]&#10;ELSE NULL&#10;END' name='[Project].[Park &amp; F1]' />
+            </bindings>
+            <relation all='true' name='Page    1 Table  1+' type='union'>
+              <columns>
+                <column datatype='string' name='PARK' />
+                <column datatype='string' name='BOROUGH' />
+                <column datatype='string' name='SIZE (ACRES) CATEGORY' />
+                <column datatype='integer' name='Murder' />
+                <column datatype='integer' name='RAPE' />
+                <column datatype='integer' name='ROBBERY' />
+                <column datatype='integer' name='FELONY ASSAULT' />
+                <column datatype='integer' name='BURGLARY' />
+                <column datatype='integer' name='GRAND LARCENY' />
+                <column datatype='integer' name='MOTOR VEHICLE' />
+                <column datatype='integer' name='TOTAL' />
+                <column datatype='string' name='F1' />
+                <column datatype='string' name='Table Name' />
+              </columns>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    1 Table  1' table='[&apos;Page    1 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    2 Table  1' table='[&apos;Page    2 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    3 Table  1' table='[&apos;Page    3 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L52:no:A1:L52:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='string' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    4 Table  1' table='[&apos;Page    4 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    5 Table  1' table='[&apos;Page    5 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    6 Table  1' table='[&apos;Page    6 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    7 Table  1' table='[&apos;Page    7 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    8 Table  1' table='[&apos;Page    8 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    9 Table  1' table='[&apos;Page    9 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   10 Table  1' table='[&apos;Page   10 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   11 Table  1' table='[&apos;Page   11 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   12 Table  1' table='[&apos;Page   12 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   13 Table  1' table='[&apos;Page   13 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   14 Table  1' table='[&apos;Page   14 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   15 Table  1' table='[&apos;Page   15 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   16 Table  1' table='[&apos;Page   16 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   17 Table  1' table='[&apos;Page   17 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='1' outcome='9' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   18 Table  1' table='[&apos;Page   18 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   19 Table  1' table='[&apos;Page   19 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   20 Table  1' table='[&apos;Page   20 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   21 Table  1' table='[&apos;Page   21 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   22 Table  1' table='[&apos;Page   22 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='PARK' ordinal='0' />
+                  <column datatype='string' name='BOROUGH' ordinal='1' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                  <column datatype='integer' name='Murder' ordinal='3' />
+                  <column datatype='integer' name='RAPE' ordinal='4' />
+                  <column datatype='integer' name='ROBBERY' ordinal='5' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                  <column datatype='integer' name='BURGLARY' ordinal='7' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                  <column datatype='integer' name='TOTAL' ordinal='10' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   23 Table  1' table='[&apos;Page   23 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+              <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   24 Table  1' table='[&apos;Page   24 Table  1$&apos;]' type='table'>
+                <columns gridOrigin='A1:L34:no:A1:L34:2' lost='0' outcome='1' processed='224'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='PARK' ordinal='1' />
+                  <column datatype='string' name='BOROUGH' ordinal='2' />
+                  <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                  <column datatype='integer' name='Murder' ordinal='4' />
+                  <column datatype='integer' name='RAPE' ordinal='5' />
+                  <column datatype='integer' name='ROBBERY' ordinal='6' />
+                  <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                  <column datatype='integer' name='BURGLARY' ordinal='8' />
+                  <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                  <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                  <column datatype='integer' name='TOTAL' ordinal='11' />
+                </columns>
+              </relation>
+            </relation>
+          </relation>
+          <relation connection='ogrdirect.0j3f4do00vkq3e1a7jyw00rdxit7' name='NYC Parks and Public Spaces.shp' table='[NYC Parks and Public Spaces.shp]' type='table'>
+            <columns>
+              <column datatype='string' name='waterfront' ordinal='0' />
+              <column datatype='string' name='address' ordinal='1' />
+              <column datatype='string' name='retired' ordinal='2' />
+              <column datatype='string' name='name311' ordinal='3' />
+              <column datatype='string' name='permitpare' ordinal='4' />
+              <column datatype='string' name='subcategor' ordinal='5' />
+              <column datatype='string' name='commission' ordinal='6' />
+              <column datatype='string' name='mapped' ordinal='7' />
+              <column datatype='string' name='typecatego' ordinal='8' />
+              <column datatype='string' name='signname' ordinal='9' />
+              <column datatype='string' name='omppropid' ordinal='10' />
+              <column datatype='string' name='borough' ordinal='11' />
+              <column datatype='string' name='department' ordinal='12' />
+              <column datatype='string' name='location' ordinal='13' />
+              <column datatype='string' name='jurisdicti' ordinal='14' />
+              <column datatype='string' name='url' ordinal='15' />
+              <column datatype='string' name='pip_ratabl' ordinal='16' />
+              <column datatype='string' name='nys_assemb' ordinal='17' />
+              <column datatype='string' name='acquisitio' ordinal='18' />
+              <column datatype='string' name='zipcode' ordinal='19' />
+              <column datatype='string' name='communityb' ordinal='20' />
+              <column datatype='real' name='gisobjid' ordinal='21' />
+              <column datatype='real' name='objectid' ordinal='22' />
+              <column datatype='string' name='permit' ordinal='23' />
+              <column datatype='string' name='class' ordinal='24' />
+              <column datatype='real' name='acres' ordinal='25' />
+              <column datatype='string' name='precinct' ordinal='26' />
+              <column datatype='string' name='parentid' ordinal='27' />
+              <column datatype='string' name='councildis' ordinal='28' />
+              <column datatype='string' name='us_congres' ordinal='29' />
+              <column datatype='string' name='eapply' ordinal='30' />
+              <column datatype='string' name='global_id' ordinal='31' />
+              <column datatype='string' name='nys_senate' ordinal='32' />
+              <column datatype='string' name='permitdist' ordinal='33' />
+              <column datatype='string' name='gispropnum' ordinal='34' />
+              <column datatype='spatial' name='Geometry' ordinal='35' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Park &amp; F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Park &amp; F1]</local-name>
+            <parent-name>[Project]</parent-name>
+            <remote-alias>Park &amp; F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BOROUGH</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[BOROUGH]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>BOROUGH</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SIZE (ACRES) CATEGORY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SIZE (ACRES) CATEGORY]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>SIZE (ACRES) CATEGORY</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Murder</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Murder]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>Murder</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RAPE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RAPE]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>RAPE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROBBERY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ROBBERY]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>ROBBERY</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FELONY ASSAULT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FELONY ASSAULT]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>FELONY ASSAULT</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BURGLARY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BURGLARY]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>BURGLARY</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GRAND LARCENY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GRAND LARCENY]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>GRAND LARCENY</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOTOR VEHICLE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MOTOR VEHICLE]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>MOTOR VEHICLE</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TOTAL]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>TOTAL</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[Page    1 Table  1+]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>waterfront</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[waterfront]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>waterfront</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[address]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>address</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>retired</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[retired]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>retired</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name311</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name311]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>name311</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>permitpare</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[permitpare]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>permitpare</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subcategor</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subcategor]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>subcategor</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>commission</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[commission]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>commission</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mapped</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[mapped]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>mapped</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>typecatego</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[typecatego]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>typecatego</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>signname</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[signname]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>signname</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>omppropid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[omppropid]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>omppropid</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>department</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[department]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>department</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[location]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>location</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>jurisdicti</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[jurisdicti]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>jurisdicti</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[url]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>url</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pip_ratabl</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pip_ratabl]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>pip_ratabl</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nys_assemb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nys_assemb]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>nys_assemb</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acquisitio</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[acquisitio]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>acquisitio</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zipcode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zipcode]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>zipcode</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>communityb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[communityb]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>communityb</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gisobjid</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[gisobjid]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>gisobjid</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>objectid</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[objectid]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>objectid</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>permit</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[permit]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>permit</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[class]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>class</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acres</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[acres]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>acres</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>precinct</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[precinct]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>precinct</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>parentid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[parentid]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>parentid</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>councildis</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[councildis]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>councildis</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>us_congres</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[us_congres]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>us_congres</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eapply</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[eapply]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>eapply</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>global_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[global_id]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>global_id</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nys_senate</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nys_senate]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>nys_senate</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>permitdist</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[permitdist]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>permitdist</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gispropnum</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gispropnum]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>gispropnum</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[NYC Parks and Public Spaces.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Borough' datatype='string' name='[BOROUGH]' role='dimension' type='nominal' />
+      <column caption='Burglary' datatype='integer' hidden='true' name='[BURGLARY]' role='measure' type='quantitative' />
+      <column caption='Felony Assault' datatype='integer' hidden='true' name='[FELONY ASSAULT]' role='measure' type='quantitative' />
+      <column caption='Grand Larceny' datatype='integer' hidden='true' name='[GRAND LARCENY]' role='measure' type='quantitative' />
+      <column caption='Motor Vehicle' datatype='integer' hidden='true' name='[MOTOR VEHICLE]' role='measure' type='quantitative' />
+      <column datatype='integer' hidden='true' name='[Murder]' role='measure' type='quantitative' />
+      <column caption='Park' datatype='string' name='[Park &amp; F1]' role='dimension' type='nominal' />
+      <column caption='Rape' datatype='integer' hidden='true' name='[RAPE]' role='measure' type='quantitative' />
+      <column caption='Robbery' datatype='integer' hidden='true' name='[ROBBERY]' role='measure' type='quantitative' />
+      <column caption='Size (Acres) Category' datatype='string' hidden='true' name='[SIZE (ACRES) CATEGORY]' role='dimension' type='nominal' />
+      <column caption='Incidents' datatype='integer' name='[TOTAL]' role='measure' type='quantitative' />
+      <column datatype='string' hidden='true' name='[Table Name]' role='dimension' type='nominal' />
+      <column caption='Page    1 Table  1' datatype='table' name='[__tableau_internal_object_id__].[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]' role='measure' type='quantitative' />
+      <column caption='Acquisitio' datatype='string' hidden='true' name='[acquisitio]' role='dimension' type='nominal' />
+      <column caption='Acres' datatype='real' hidden='true' name='[acres]' role='measure' type='quantitative' />
+      <column caption='Address' datatype='string' hidden='true' name='[address]' role='dimension' type='nominal' />
+      <column caption='City Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Class' datatype='string' hidden='true' name='[class]' role='dimension' type='nominal' />
+      <column caption='Commission' datatype='string' hidden='true' name='[commission]' role='dimension' type='nominal' />
+      <column caption='Communityb' datatype='string' hidden='true' name='[communityb]' role='dimension' type='nominal' />
+      <column caption='Councildis' datatype='string' hidden='true' name='[councildis]' role='dimension' type='nominal' />
+      <column caption='Department' datatype='string' hidden='true' name='[department]' role='dimension' type='nominal' />
+      <column caption='Eapply' datatype='string' hidden='true' name='[eapply]' role='dimension' type='nominal' />
+      <column caption='Gisobjid' datatype='real' hidden='true' name='[gisobjid]' role='measure' type='quantitative' />
+      <column caption='Gispropnum' datatype='string' hidden='true' name='[gispropnum]' role='dimension' type='nominal' />
+      <column caption='Global Id' datatype='string' hidden='true' name='[global_id]' role='dimension' type='nominal' />
+      <column caption='Jurisdicti' datatype='string' hidden='true' name='[jurisdicti]' role='dimension' type='nominal' />
+      <column caption='Location' datatype='string' hidden='true' name='[location]' role='dimension' type='nominal' />
+      <column caption='Mapped' datatype='string' hidden='true' name='[mapped]' role='dimension' type='nominal' />
+      <column caption='Park Name' datatype='string' name='[name311]' role='dimension' type='nominal' />
+      <column caption='Nys Assemb' datatype='string' hidden='true' name='[nys_assemb]' role='dimension' type='nominal' />
+      <column caption='Nys Senate' datatype='string' hidden='true' name='[nys_senate]' role='dimension' type='nominal' />
+      <column caption='Objectid' datatype='real' hidden='true' name='[objectid]' role='measure' type='quantitative' />
+      <column caption='Omppropid' datatype='string' hidden='true' name='[omppropid]' role='dimension' type='nominal' />
+      <column caption='Parentid' datatype='string' hidden='true' name='[parentid]' role='dimension' type='nominal' />
+      <column caption='Permit' datatype='string' hidden='true' name='[permit]' role='dimension' type='nominal' />
+      <column caption='Permitdist' datatype='string' hidden='true' name='[permitdist]' role='dimension' type='nominal' />
+      <column caption='Permitpare' datatype='string' hidden='true' name='[permitpare]' role='dimension' type='nominal' />
+      <column caption='Pip Ratabl' datatype='string' hidden='true' name='[pip_ratabl]' role='dimension' type='nominal' />
+      <column caption='Precinct' datatype='string' hidden='true' name='[precinct]' role='dimension' type='nominal' />
+      <column caption='Retired' datatype='string' hidden='true' name='[retired]' role='dimension' type='nominal' />
+      <column caption='Signname' datatype='string' hidden='true' name='[signname]' role='dimension' type='nominal' />
+      <column caption='Subcategor' datatype='string' hidden='true' name='[subcategor]' role='dimension' type='nominal' />
+      <column caption='Typecatego' datatype='string' hidden='true' name='[typecatego]' role='dimension' type='nominal' />
+      <column caption='Url' datatype='string' hidden='true' name='[url]' role='dimension' type='nominal' />
+      <column caption='Us Congres' datatype='string' hidden='true' name='[us_congres]' role='dimension' type='nominal' />
+      <column caption='Waterfront' datatype='string' hidden='true' name='[waterfront]' role='dimension' type='nominal' />
+      <column caption='Zipcode' datatype='string' hidden='true' name='[zipcode]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/POORNA~1/AppData/Local/Temp/TableauTemp/#TableauTemp_00m1eo701tu3cv1dws1rl1hscdjt.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/12/2025 07:31:29 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[BOROUGH]' value='[Extract].[BOROUGH]' />
+            <map key='[Geometry]' value='[Extract].[Geometry]' />
+            <map key='[Park &amp; F1]' value='[Extract].[Park &amp; F1]' />
+            <map key='[TOTAL]' value='[Extract].[TOTAL]' />
+            <map key='[borough]' value='[Extract].[borough1]' />
+            <map key='[name311]' value='[Extract].[name311]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Park &amp; F1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Park &amp; F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Park &amp; F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Project</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1102</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>BOROUGH</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[BOROUGH]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>BOROUGH</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Page    1 Table  1+</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TOTAL</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TOTAL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TOTAL</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Page    1 Table  1+</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name311</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name311]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>name311</remote-alias>
+              <ordinal>3</ordinal>
+              <family>NYC Parks and Public Spaces.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1007</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>borough1</remote-alias>
+              <ordinal>4</ordinal>
+              <family>NYC Parks and Public Spaces.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>5</ordinal>
+              <family>NYC Parks and Public Spaces.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>1125</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='1155' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <filter class='categorical' column='[Park &amp; F1]' filter-group='2'>
+        <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+          <groupfilter function='level-members' level='[Park &amp; F1]' />
+          <groupfilter function='member' level='[Park &amp; F1]' member='&quot;TOTAL&quot;' />
+        </groupfilter>
+      </filter>
+      <object-graph>
+        <objects>
+          <object caption='Page    1 Table  1' id='Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310'>
+            <properties context=''>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[Project].[Park &amp; F1]' />
+                    <expression op='[NYC Parks and Public Spaces.shp].[name311]' />
+                  </expression>
+                </clause>
+                <relation type='project'>
+                  <columns>
+                    <column caption='Park' hidden='true' name='[Page    1 Table  1+].[PARK]' />
+                    <column caption='F1' hidden='true' name='[Page    1 Table  1+].[F1]' />
+                    <column name='[Project].[Park &amp; F1]' project-type='coalesce' />
+                  </columns>
+                  <bindings>
+                    <binding expression='IF NOT ISNULL([Page    1 Table  1+].[PARK]) THEN [Page    1 Table  1+].[PARK]&#10;ELSEIF NOT ISNULL([Page    1 Table  1+].[F1]) THEN [Page    1 Table  1+].[F1]&#10;ELSE NULL&#10;END' name='[Project].[Park &amp; F1]' />
+                  </bindings>
+                  <relation all='true' name='Page    1 Table  1+' type='union'>
+                    <columns>
+                      <column datatype='string' name='PARK' />
+                      <column datatype='string' name='BOROUGH' />
+                      <column datatype='string' name='SIZE (ACRES) CATEGORY' />
+                      <column datatype='integer' name='Murder' />
+                      <column datatype='integer' name='RAPE' />
+                      <column datatype='integer' name='ROBBERY' />
+                      <column datatype='integer' name='FELONY ASSAULT' />
+                      <column datatype='integer' name='BURGLARY' />
+                      <column datatype='integer' name='GRAND LARCENY' />
+                      <column datatype='integer' name='MOTOR VEHICLE' />
+                      <column datatype='integer' name='TOTAL' />
+                      <column datatype='string' name='F1' />
+                      <column datatype='string' name='Table Name' />
+                    </columns>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    1 Table  1' table='[&apos;Page    1 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    2 Table  1' table='[&apos;Page    2 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    3 Table  1' table='[&apos;Page    3 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L52:no:A1:L52:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='string' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    4 Table  1' table='[&apos;Page    4 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    5 Table  1' table='[&apos;Page    5 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    6 Table  1' table='[&apos;Page    6 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    7 Table  1' table='[&apos;Page    7 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    8 Table  1' table='[&apos;Page    8 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page    9 Table  1' table='[&apos;Page    9 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   10 Table  1' table='[&apos;Page   10 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   11 Table  1' table='[&apos;Page   11 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   12 Table  1' table='[&apos;Page   12 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   13 Table  1' table='[&apos;Page   13 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   14 Table  1' table='[&apos;Page   14 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   15 Table  1' table='[&apos;Page   15 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   16 Table  1' table='[&apos;Page   16 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   17 Table  1' table='[&apos;Page   17 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='1' outcome='9' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   18 Table  1' table='[&apos;Page   18 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   19 Table  1' table='[&apos;Page   19 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   20 Table  1' table='[&apos;Page   20 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   21 Table  1' table='[&apos;Page   21 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   22 Table  1' table='[&apos;Page   22 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:K55:no:A1:K55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='PARK' ordinal='0' />
+                        <column datatype='string' name='BOROUGH' ordinal='1' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='2' />
+                        <column datatype='integer' name='Murder' ordinal='3' />
+                        <column datatype='integer' name='RAPE' ordinal='4' />
+                        <column datatype='integer' name='ROBBERY' ordinal='5' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='6' />
+                        <column datatype='integer' name='BURGLARY' ordinal='7' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='8' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='9' />
+                        <column datatype='integer' name='TOTAL' ordinal='10' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   23 Table  1' table='[&apos;Page   23 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L55:no:A1:L55:2' lost='0' outcome='1' processed='392'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                    <relation connection='pdf.1bpi91w199jf1h1drwjy71b2hcdm' name='Page   24 Table  1' table='[&apos;Page   24 Table  1$&apos;]' type='table'>
+                      <columns gridOrigin='A1:L34:no:A1:L34:2' lost='0' outcome='1' processed='224'>
+                        <column datatype='string' name='F1' ordinal='0' />
+                        <column datatype='real' name='PARK' ordinal='1' />
+                        <column datatype='string' name='BOROUGH' ordinal='2' />
+                        <column datatype='string' name='SIZE (ACRES) CATEGORY' ordinal='3' />
+                        <column datatype='integer' name='Murder' ordinal='4' />
+                        <column datatype='integer' name='RAPE' ordinal='5' />
+                        <column datatype='integer' name='ROBBERY' ordinal='6' />
+                        <column datatype='integer' name='FELONY ASSAULT' ordinal='7' />
+                        <column datatype='integer' name='BURGLARY' ordinal='8' />
+                        <column datatype='integer' name='GRAND LARCENY' ordinal='9' />
+                        <column datatype='integer' name='MOTOR VEHICLE' ordinal='10' />
+                        <column datatype='integer' name='TOTAL' ordinal='11' />
+                      </columns>
+                    </relation>
+                  </relation>
+                </relation>
+                <relation connection='ogrdirect.0j3f4do00vkq3e1a7jyw00rdxit7' name='NYC Parks and Public Spaces.shp' table='[NYC Parks and Public Spaces.shp]' type='table'>
+                  <columns>
+                    <column datatype='string' name='waterfront' ordinal='0' />
+                    <column datatype='string' name='address' ordinal='1' />
+                    <column datatype='string' name='retired' ordinal='2' />
+                    <column datatype='string' name='name311' ordinal='3' />
+                    <column datatype='string' name='permitpare' ordinal='4' />
+                    <column datatype='string' name='subcategor' ordinal='5' />
+                    <column datatype='string' name='commission' ordinal='6' />
+                    <column datatype='string' name='mapped' ordinal='7' />
+                    <column datatype='string' name='typecatego' ordinal='8' />
+                    <column datatype='string' name='signname' ordinal='9' />
+                    <column datatype='string' name='omppropid' ordinal='10' />
+                    <column datatype='string' name='borough' ordinal='11' />
+                    <column datatype='string' name='department' ordinal='12' />
+                    <column datatype='string' name='location' ordinal='13' />
+                    <column datatype='string' name='jurisdicti' ordinal='14' />
+                    <column datatype='string' name='url' ordinal='15' />
+                    <column datatype='string' name='pip_ratabl' ordinal='16' />
+                    <column datatype='string' name='nys_assemb' ordinal='17' />
+                    <column datatype='string' name='acquisitio' ordinal='18' />
+                    <column datatype='string' name='zipcode' ordinal='19' />
+                    <column datatype='string' name='communityb' ordinal='20' />
+                    <column datatype='real' name='gisobjid' ordinal='21' />
+                    <column datatype='real' name='objectid' ordinal='22' />
+                    <column datatype='string' name='permit' ordinal='23' />
+                    <column datatype='string' name='class' ordinal='24' />
+                    <column datatype='real' name='acres' ordinal='25' />
+                    <column datatype='string' name='precinct' ordinal='26' />
+                    <column datatype='string' name='parentid' ordinal='27' />
+                    <column datatype='string' name='councildis' ordinal='28' />
+                    <column datatype='string' name='us_congres' ordinal='29' />
+                    <column datatype='string' name='eapply' ordinal='30' />
+                    <column datatype='string' name='global_id' ordinal='31' />
+                    <column datatype='string' name='nys_senate' ordinal='32' />
+                    <column datatype='string' name='permitdist' ordinal='33' />
+                    <column datatype='string' name='gispropnum' ordinal='34' />
+                    <column datatype='spatial' name='Geometry' ordinal='35' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='New York Crime Stats with Geometry' name='federated.15adfwm0q2prc31c5mqy90bwjx4j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15adfwm0q2prc31c5mqy90bwjx4j'>
+            <column caption='Park' datatype='string' name='[Park &amp; F1]' role='dimension' type='nominal' />
+            <column caption='Incidents' datatype='integer' name='[TOTAL]' role='measure' type='quantitative' />
+            <column caption='Page    1 Table  1' datatype='table' name='[__tableau_internal_object_id__].[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]' pivot='key' type='quantitative' />
+            <column caption='Park Name' datatype='string' name='[name311]' role='dimension' type='nominal' />
+            <column-instance column='[Park &amp; F1]' derivation='None' name='[none:Park &amp; F1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[name311]' derivation='None' name='[none:name311:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TOTAL]' derivation='Sum' name='[sum:TOTAL:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;ST. MARY&apos;S PARK BRONX&quot;</bucket>
+              <bucket>&quot;SLOPE PARK&quot;</bucket>
+              <bucket>&quot;KELLY PARK&quot;</bucket>
+              <bucket>&quot;JACKIE ROBINSON PARK MANHATTAN&quot;</bucket>
+              <bucket>&quot;HIGHBRIDGE PARK MANHATTAN SIDE&quot;</bucket>
+              <bucket>&quot;EAST RIVER PARK&quot;</bucket>
+              <bucket>&quot;BUSHWICK PLAYGROUND ON KNICKERBOCKER AVENUE&quot;</bucket>
+              <bucket>&quot;ADMIRAL PARK&quot;</bucket>
+              <bucket>&quot;VETERANS PARK STATEN ISLAND&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='quantitative' column='[federated.15adfwm0q2prc31c5mqy90bwjx4j].[sum:TOTAL:qk]' included-values='in-range'>
+            <min>1</min>
+            <max>8</max>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]' direction='DESC' measure-to-sort-by='[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[sum:TOTAL:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='118' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk] / [federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{7A14018E-F2AF-4F70-8F76-17E86FBFCBF5}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;VETERANS PARK STATEN ISLAND&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;ADMIRAL PARK&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;BUSHWICK PLAYGROUND ON KNICKERBOCKER AVENUE&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;EAST RIVER PARK&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;HIGHBRIDGE PARK MANHATTAN SIDE&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;JACKIE ROBINSON PARK MANHATTAN&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;KELLY PARK&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;SLOPE PARK&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                    <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[__tableau_internal_object_id__].[cnt:Page    1 Table  1_4F5A206E02AF4484833F8A10A3749310:qk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+                  <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;ST. MARY&apos;S PARK BRONX&quot;</value>
+                <value>%null%</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:Park &amp; F1:nk]</field>
+            <field>[federated.15adfwm0q2prc31c5mqy90bwjx4j].[none:name311:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3E98FD34-9EE8-417B-A0B1-3719C2B86459}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAgAElEQVR4nOy9V3Sc2Z3g9/tSZRRyzoEIJEAQIMHYZDeb3VIrraT1aMazc3bn2OsHex/9
+      YL/5xccPfvM54+Od9c6MRzsKq9SSpltqdWACCBIEQeScc6EKlXP4gh8KDZLNZlMcqbtFsn5v
+      desLt259/+/e+4+CYRgGOXK8hAiCIIhfdidy5PgyyQlAjpeanADkeGaSySSZTObL7sYfhZwA
+      5Hhm0uk0qqp+2d34o5ATgBwvNTkByPFSkxOAHC81OQHI8VKTE4AcLzU5AcjxUpMTgBwvNfLD
+      HyKRCPF4/MvqS47nhGQyiSelgyQ//eA/cR75BXl5eeTl5X1ZfcnxnBAOh1nxp9EV85fdlT+Y
+      J4qwZ66f79908R/+hz9nZ+Q9gmXnON1U+Mgxv/vhj+j7i+9w5533ufT17+J8/sfjM1ETQe6N
+      jBPPGNS2HiWxvcD2vg9dttNwpJOulqrDYyP7KwzNBLn86klkVMYHPkKsO8XxhhL2N6eYdSlc
+      PN2OHvdzbeAOkslKQVk93S3FTC776O1sJrS3TlAswhTeQCw/QnB1ih1vGHtxFb3HO1BEWBkf
+      YNGTxmwy03Wyj9I8M8uTQ0RM1fS015J0L/DeyAZOq0LtkS6ay62sufy01FczNzZGbVcvDllg
+      ZmSAvVAaBIn2E31UF9m/xJH+fDAMA//eLs6iYhSzBfiMPUAi5CPk32Vq2U1wbx1POMH05ASJ
+      tMbG4hSecIqNhUWShsr66gpp7Qv7HV8aroVpnC0nufzqK9QUF9B99hJdR2po7zn/yMMPkFFV
+      0rEQgUiKTCKKPxonnUqCobGzG0FP+0ipOoaaxFbezOuXX8US28Sn5yMFN3BHUyxveigpcLAX
+      iJOv+9iIWXjt9cscb61HFLL3SabTnLxwhXO9LSzPLwFpXEGNhHcbFdASQaqPXeDypXPsrc+j
+      qyqhSAz/+gwhcxl2OXuhqG7hypUrXOqpY25p94sd2C+IxbF7DH/wLmG/77DtMzbBAsdOnWZh
+      dJiMDqBy/cMPiKYyTA5dZd378u0Vqlo72Bm7yY0746R1eFogRW1FMdseP+H9LfLL6gHIJMIk
+      5Tw6yyys+7JjmErECAYCRDIKdkWgq6+Hex/+FkdlMzaTSPfJPszOcsrZ5/0Pr7EXSh7+cYau
+      EQkH8bpdyLZ8Eu41LBUtVOYL7AbSAMSjYfxeN6LZiSDAztI4N2b2Odlew4EcoYb3uPrRR3x4
+      e4G2I9V//MH7E+DIiZM0HD3+SNtnaoFkRyXNeVHm9yKfa8eeF0RrEW9+7Rucbi/h3vAM+lOO
+      t5ZWk/Bss+WOU1/pACC4s8jK+gaTazsszC4CEPK5uPbeb3E2deFQQDQVUJGXT0VNMQIgiiIg
+      cfzcZb7y2nm2ZobxJ7JTrp5JsrG2QtgoovdoLasr6+wsjzO3usP6xg4Ae+vzfHDtHm1H2xGA
+      6iPH6SiVWfc8+F9lZwVXrlzh1XPtrC1u/ZFH7k8DUZQeb/vsUwTOXDzHxPAoIFPpFPngo49Y
+      2vZ99mkvKP6dZQYGBpmYWyevKP8Tg2fgdW0SST60FhRMlFoS+IQ8zAev2tXdON/57je58ta3
+      qBDDJAwoq2nhO3/2rwktjbLtj4IAgiAhCA8upSVC3L7Vz92RcVTZiVXJ3l0y2+nsPsmx1npE
+      PU5AK+Drb32Fr33ja8hRD2kdmjpP8+23zjN1b5hYRgdE2ntP45kfwR/PenWqUS93hoYYnVjC
+      mm8n7nfjDsWJ7G/hjb4Ynp+fhvCkkEhdTaMiYZJFErEYstmGYGRIpDIosoysmNDSKRSLhUwq
+      hWK2HK5LX1QMXSeVSqIjYjGbEUUBXVMxBAlJBDWTQZAUJFFA1zUMRARDRTMkZNFAMwQMXUNR
+      FAC0TAZBktB1A1mW0DUVHRFZElAzKpKiHC5RDMMgk06hajqKyYwiZ99mmpq9pyiAYeiomo4s
+      ywgYqKqGKICOdHDNNIIkYxgGsiShqRkQZSRRIJNOkVE1EEQsFjNoGrogIhgahigjP/TnhsNh
+      Rp4zLZCh60zcuk7Y50UQRTrPXeTPe1uFJwpAjhxP4nkUgE/jzRqn8PxbMj5nVFV9YYI//lik
+      0+kvuwt/NHIC8BQMw0DXn7bdfbnIjseL4UWTE4BnQM/EmZ6YJJjQaGjrpFgIEFSqqC4wYRgG
+      e+vzLG/vYy+s4vixFoLbC0wuuTBZrLQeO44S2WZ8ZRdJEKhu6aK5qhAtEeLO8H10UaGsupnW
+      xipQQ9y+vcCpi6exiDA5fJNgUsDiLOXE8Xai3h3kvEoseojN/RQtDZVf9tA8FxiGQSwUxGJ3
+      IB/sw14MMf6CcC9MIlYd5cLZU+RbFdKRffzxrNZHi7mY3U5x9vwrVEheptb8RMIxjnT3cfp4
+      E/MLS8T9CY6eu8ClS5dorspa1fV0HKmwlosXzpH2LOJPgn9tCcMqsLuftRME0xKXLl6kwRJm
+      YS9OLOwnkckwPTZFQVnJlzYezxtrM5Pc+MWPCHk9h205AXgGiusacU3d5u7EEmar5ZHvwnub
+      lLV0oEgilW0dxHY/1qUbqOk0gigBCe4PDtDf38+m52HbioFh6KQyIEsGq/4MJ9vrCezvHBrb
+      DAxiKRWHRUFPRrnz0fvIdZ2U2JQv4Je/GFQ3t9J8vOeRttwS6BlQ8sp44ytfJexZ4fbQNN0P
+      eT+YrTbi0RhgRk/FMGQraF4m7g1RUlrOqe5j+OemOXnhJOWmR4fdtTLDYNhL87E+nJqHjQ0X
+      yVSC/aDK0fYWkoFd3v3FT7A39nG5UGHb76C3r4r1nR3UmmLk3Gvs98JstQKP6upzAvAMBPc2
+      2NyPoQhJ7A4nGAl215cxxRzU1zWRvjXEtFpN0LVDS9+rJDejdPd1U1v8sWNZmvWlRYKyRGF5
+      DWUF2fbK5k7OHT8CwM78Eicvv0lTWR7rs6N4Q3EshVW8ee40M6MjLO8WYgHM+dW0pSNMLm3T
+      01bDC26C+dzI2QGeQiaTOUwCpWsZAv4AmiBTWFiAqCbZD4RBkCkuKQI1SSAYwezIJ99uIZ1K
+      IMhmFCn7is4kY/iDEQzA5izEaTNjaCqJjIbNktWpJ5MJZJMZWRTR0klUQUHNpLDbbBi6SjSe
+      xmISESQzkmgQiyex221fqABEo1Gm4+JzZQf42BDm39tFVhS6LryWM4T9PjwsADmyPI8C8Gnk
+      DGG/B5IkIQi5BcbDZF05Xgz/95wAPAVRFA+8MXN8jCRJ5ATgZSTuYztpp7pAYm1tm6oiM/0j
+      c0gilNV30FQiETXyKC+0oSZjuAJRaivLSccDuAIaddUlJIN7hIx8KgqtBHcWuTe3hcnq5ETv
+      CfKtCt7tRTyZfI42lqPGfAwOj6MJJlo6uqgtK2B3d5vq6mr2t9aQS+ootOb+wt8Xw8iqpCVF
+      OXyp5V5tz0LCx04gwd7KDCHNBEkfZR3nuHLlCl0tVcSC++wHssYrLRVj25U1uChmG7urc8TS
+      Gaanl3A6rQBEvVs09F7hbFcNI/emwFDZ2PawvbaMAWgxP0p5K69dOMXW3CjRDOzs7pCK7DO9
+      4SfP/Lh/e44ns700z2//8W8JuF2HbTkBeEbW58aY3UvT2VIFus7K7DgjIyOs7wWeeI4gmWlv
+      KufeQD+O+mPYPvncCgKyLJGO+lEtpTTm6bjiD/yPDEAxmREFiHi36b8zzrHurkdclHM8ncLy
+      Slp7+h5py82fz0hZdR1icJtURkcWRCrrmjlSacFksRFxPfm8gqpm9Nm1QxcIAF1TGR28iqvI
+      yYmebvY37rO85KHUFMMQNnmtDlan77F4J8Rr3/4eNgVszmJskkAklqLUYSa3P//9ceQX8MkB
+      ywnAM2JzlnCsRuH+2AynagySiRjRqIoVGQwNv9fNjkXFaROJhfzs7OyQX1yGw6JgNssID2ns
+      RUmm98IVjhSBYWgsejN8+7vfxi5p3OofRKWSps4+ussF7k5PU3L2FJLJyvGe4wwM3KUo/wKF
+      1pwrxB9Czg7wLGTihFSFfKtM0O/HapFZ3chmUHAWV1LqEFjb2EUXZOob63FvrpBUoay2iWKH
+      mWDAj7Og6EFGh4gf3VKETclGcwWCYYoKC8AwiASDmG1m4hmRAoeFWMiPbnJgZBI4nfmkY0ES
+      go18m+kLH4bnMSDmY0OYZ2sDk9lC96XXc4awHP8ynkcB+DRyhrDfA03T0LQXQ+f9x+JFipDL
+      CcBT0HX9hfrD/xhkx+PFUCC+GL/ii0RX2d7eRQN0Lc3CzDzpg0WklkkwNz7C/cklNC3Nvj8E
+      QNC9QzSt4na50TWVhan73L59m6HhSVIHl/VtL3P79m1Gp5dIazpgEHRvMHRniO39bOyA9+CY
+      4ftTRFMqWiaGZz8MqTDTSxsAqPEgnmAcLZNgZuwew/enSKgGGBpbS9MM3RslGM/6Nq0tTBM9
+      6Pze3oNscO71eW7fvs3E3Cqq/mKvkHMC8KzoKgsLS+hAfH+F1R0Xe74EhqEzNnQbR00brdVF
+      ZNQkmy4PatzL+JIbq6KzurKGoWUI62b6+vo41XuUj7ew7lUXLX19NOSnuT+7Q8y3xfiSj+7e
+      E7jn77IVSLLtjdB78hTH6vMYGV8kkwqyuemDhI+VxUU2/EnUiJt1T5ilsXvYajs41lxONJZi
+      Y/Y++3oB3e31jN+9QzxjsOfaYGFhFQNYXl4+/Imbm/t09fVRqQQZXXZ/GaP8ueBaX+XX/+n/
+      wv+QsOcE4A9gbTNI38l2vPt76FqUlFhEbUkeecXFWIBIwMPg3Sl6+k4gPaR+ToT9bG5usrW7
+      /1B6RQFZkbE68lAE8Lt3qWs/htVsoe3oEfZ39kBNsLW5ydqWh+LSRxMVVx3pwL00h2Zkr+XM
+      d7C5tEAgpVCSL+MLZmhtrsaaV0xtmR1fOIHZWYZd8+OPPertKggCkiJjz8tDeIF0JFa7ndae
+      0zys98kJwL8AQZQQ9Bgr61usLq+wtrR6kCv00YdFkiREdPRPLCNEScZsNmMyPdDh61qUwfd/
+      w4f3Nuk4UgmC8OCPOnioEURMJhP2PDvpWPKRu4myjeoiia2D5VJl6wl62mrxb0wwteLPXuQw
+      vtI4sEaINDRUs7G29ci1tGSA2/0DTG7G6Ggo/YPH60+FgtLyxwxhOQF4BhLxKH6vC9HqJLa9
+      Rt3JV+k6fpKjNXkE4jJWI8jang//npskWavthfOnGB8aJqU9eMQUi43CwkIKnQ9SkIuSg/Nv
+      fpXmIoFtT4ii8mq25qcIRcLMzixRXlsBokJhURGF+Y6D8MtHqaxvxLu1jmoYuLc3yYgWKssL
+      iMdUSoutzC+tE/LvseVNUpyf9Uey5FdiTXsJJh9s9CVLIecvXeJc3wkcZgk1k0Y3IJNOo79A
+      MwLkDGFP5eGAmP3tFbb9Kdo72kmH/ZjyC7HKEplYkKhhxWnWWV5YICXlc6y1hmAkQXGBk3ho
+      n5SchxqLUlxSwNriLIFoGlGy09nTgQkIuj1Yy8swGxrb23tU1VQR8e6ysummsrGVyiIHftc6
+      qzteJMVGS1srNilNMKxTnAe+lEJxnpmAe4OUqZR8Kc7SygairYSO1nokdHbXl9gLZWhpa8Np
+      VfD7fRQVFaMlQqx4YrTWZ4OcfW4P+eVlBypCA69rC1tJHdG9LZw1Naix2HMXEPOxIWx3dQmL
+      zU7Pa2/mDGG/D7mIsMfJRYS9RIiiiCznhulhsuPxYmTLy/2zT0GSpIMIqBwfkxWAFyM/aE4A
+      noV0lP2kTKnTQjIcQDXnIaWjaIoDh1ki7HOxseslv7yWutI8fIEIhcWFoKYJRhPkm2FmaR0D
+      iar6JkryzKwvzxFO6JRU1VNdmk8o6MfqKCAZ2GVt14fVWUJLQxWiIKCloiwtr4HZSVND7eEx
+      AFWN7ZQ6zWjJCPNLa2iCTF1jMwV2M1omwfaOj5r6GiRDZX1lkVBcpbiqnprSfMKhIPa8fPR0
+      jHAKivMdX/JAf3HktEDPQmSXyfXsA+ffWGQ3nGZ/ZwlXMEnUs8DQzB5llZXEI0HQU8zMLKMD
+      ajLK/PIqKe8KUVMZVRVFjN+7SzKVYnlrj+rqCtbHb+NJwOryPJGkyt76LFJ+FUrSw63RBYxM
+      hOs3h7AXlWOXdKLJNO6VTRzV1VRXV+OwZN9lmeAWrqSJiuI87t+9S1IzCLpWuDc+RSCWATXJ
+      /NY+1dWV7E4PsRNRWV9bJq1qzI7dJ6G/uI+E17XDb/7h/yHgeWDce3F/7edELBzA4/HgD0Ue
+      0Z3Pzexy9mIPDpNMUVERAJlUjH2Ph32vj8yBP52hG6STCRSLHUkUUCx2iotLqS1zkHhory2K
+      EgVFpTR29GCNeNje2aCkuZPKIgdmex52swKGgaHr6Lr+SOYKW14BpeUVFNhEVA22toOc721m
+      x+PPRpdZbJQUl1BT4SSRMjDUNOvzY6QLmqkptH3+g/glYWgaTZ0n0LUHKt+cADwj0aAPt9uN
+      N/CoAGiCgCQYREN+PrjeD0AmEcXtduPx7B8UGoSgz40vEEU2KdmynduL/OrnP2OLCmqdn35P
+      WRDQdANJFFFTMebH7rHsCmDoGfbdbtxuN4nMg03pytRdrt8YwFzShE2Ks7q1RzAUZGU+G2sc
+      3FnmVz//KaupEhqLFXQ1icfjx2x9vrU6T6O0pi5nCPtDKa9roauri9aGqkcGr6U+n+GRFYpr
+      Gik5CHq3FZTT2dXFsaPtfJzDtv7IMTo7O0hHA6iaQVFNK195/Txxr+cRY1kWg5B7lYDipKai
+      iu3FaVRzEU215dniebKN9q4uurq6KLQ92M41d53h9ddfp7OlisjGLCUdfRSW1FKsJImqBgXV
+      LXzljYskvXskVQPJ4qTvlddIbU7hCqV4mcjZAZ6FhJ+NqEJ9aR7R/V3S9lLkhA/NUkSBTca1
+      OsfCpofSujY6G0vZ2vFSXVuJkU6w5w9TZoOBkRkQJOrbOmksz2d7z0NddRWpiIedkIRdTuIs
+      qiDqWmRi2YWztJaTnS1IIiRCHu6PzyI5SjjRdZSYa4mJ5WwlyCPd56grsaHGfLiTFqoP8pHu
+      bWxSUFeHRYCEb5uoUkw8EqK+uoJUxMtuyMBu0igsLkfIRNj2JaivLicV3ccTlqmwJ9lJ2mks
+      fzA9PY8BMR8bwjYXZrHlOTn5+ldzhrAc/zKeRwH4NHKGsN8D/WCTmeMBL1KEXE4AnoKmaTlX
+      iE+QHY8XY/uYE4BnQU2y7dpHNwzMtnzKSvLR0gmC0QzFRU4EDGIhP/5wHGdhKWImTCCSBEA2
+      2SgvL0E0NPbdLpIZA2dhCQV5VmKxKGaLjUQiTp7DgWEYRKMxzLKBez+AATgKS3FIGfa8QSTF
+      TGlpKaaDyhgh3x6hWBqLPZ+SonxEDEIBHyZHIVaTRCoWwu0LIcpmKirKEPU0SU3EZpKJRiJY
+      HXlIL2mSrRdDjL8oIjvMbIfQNO3QLdi9Ocfg3VGSGZ1keJ+x6SUymTTbu3sYuo4WdzE6s4N2
+      sIzSM0kmZmbRtAzT9+4QSMPi/DTxVJq5ySlSOmCkmJyaw7OzjjcYQ9M0DN3AszjJTiRNLLDD
+      6PTaoRp2bmqURFpja2mKNVcQw1AZuTPA0no2U9f+xjSb/iSJoIuRyWXUsJtVV4BkxM343Dov
+      yyYw5N3n+s9+QMi3f9iWmwGekYKSCqqrndmaX7qK26fR1VDIfiRBmaSTTKYpLK2iwWFBFASc
+      1gzbUY3aqjIgm1PZ5iyhoaERc8LNwQQBgkRlkcJeIElpehlrRSuCsUtpRSVlBTYkSSaBSEVt
+      Aw32JCMj6+iABMgWB/UNDaTzRLaiMdIBLwWNvaRCPlSjGkGUqayup6lYxH9vHChHVdNMTqxw
+      /PQrL02KxVgkRFF5FepDdY5zAvCMbC5NoXstFFY00lwu44skKS9RWFjaoe5MK+dPiUxNDJNU
+      innlTCef5kbn217iA+8ezupmzjjBd9BeUlbJrGuXQCRC2+l8gstrzE9NsGWzUNPSjoDK+O0b
+      zANdp84cXjsZ8jB4awBZUug+eYrF+zexNRzD5/bgj2Yw1BTjd2+wqEgc77sA7LOzMo1iKsKq
+      vDyLgKrGFkLe/UfacgLwjDR19HKyMR+AvdkhbKVlxDQBNbJHIlVFUrfRd/4Cg1f7SQPWT7lG
+      cU0LR2sKmN6KPpJ1wVpQjLEwTMjIxy5CULLQ2dtKxYF7wvaOTPeZU0SXx0imMhhG1rBpyS/j
+      1KlLWGRATzKREqlMRCjMs7LtCVAum+k+1U1sfYpUJg0K1Lf1Uin4GJvboO9Yw0tbYywnAM+C
+      OZ/Qxjj9WwL5pfU4LWWc6WhCFqDYKpNQBXZWpphJaNR29WIBkPOoKn+gRhUkmaqKcgqrauhW
+      tth1Byktq8xuaEWZ6rICYtZ6ABwOCxPjwyxKIpVNxygtrUK3mmno7WNlaY2UVoBFFimvqD4M
+      uteSMeqO9dJYWYCh17K2EcRRWIHZbqe57wxLiytkasoodpooKiwhvr5KLKXheMFTrX9sCFud
+      GmdrcY6+N78O5CzBTyUXEfY4uYiwl4hciaTHyQYIvRjvzZwAPIVcRNjjpNNpchFhLyN6hmA4
+      imEIWGx2LCaZdDqN2WzG0FXSKphkgWg0io6Iw+FAz6QRTSYkQSCVSqHIIqouYlIkErEoitWB
+      LGik0jqyBDoSiiSQTiWIJ9NY7XmIhoZkMiHoGVKqgMUkP+gLInaHA0U0SKsCZtOBsBo60XgC
+      m9WGgE4qo2E2m0DXSKs6ZkUmEYuQUg2sdgcmySAciqALAjZHHmb55RD63Nz+LATW+OjuDKur
+      y9wYuE0iEWf4/n0AtMgmw1O7bMyNMj6zwMLsDLv+KMt37uI90PTcu3eHSNDF2PQaoDH4u5+z
+      7EmiRXcYntnBuzXP4naAdMTFjf4hlpeX2PYEWRsbJ4LB6sRdNrzxw768e3OUlaV5+m/fJ+Zf
+      5/7sgxI1qfA+v/3nd9gJxDH0NPfv3iWW1vFuzLG8G2R7aZy74zOsLC+ytLFHKuHi6vu3WVte
+      4PqtkRck5P1RYuEQd3/3z0QC/sO2nAA8I7UtnXR3tmMWDT4tb2w0GsZZUkPf2bPUluQ99r3F
+      VoSaCqLFXNgb+kh4tvDu+iivLj48ZnF8nq5Lr3LqVB/NB+1R9zouvYTWygfXrGxs51TfGQot
+      GTLao4+sz7PD8d4T7Ox4EWUrHQ3FLK1vsupK0FqXx8pWjAvnz3LyVB+dLdUICFTUt9J76gzF
+      ssqLuO33uXYQRYl0MnHYlhOAZ2Rh7DY3b91FsRd+qgX16MlXsMR3+M07v2VjPwLEGbp+jatX
+      r7K8E0BQLDiMFKvrfqqbalEzMVyRFBXOBxaDoCZQ9JBaMp30MzA4RnlVJTyksV+dvsfVjz4k
+      IRVhfsigZRg661sBSqoqCbuzyW8La9sIzw1T1nEcxUhhSDYEPcP9/t/w649G0DFYm73P+++/
+      j1FQyRdfd+bzp67tKI7CokfacgLwjLT1nOf111/DpoaJqTp6Jk1K1Ql5/VjyHcTjSRo7T3Lp
+      dBvbWzuAjbOXX+fKlSu0VBcCIoVFNhZ2g5Q57BSIMbwJGav5wXasscTM9No+uq6STGUwWYp4
+      61tvsTN7n0j6gStyU2cfV954k1dOdjxicdZTAbzBGCuz8xALsBnREAQJe0EFJU4FJAdmw4cv
+      ptFz+ixOswwINB7toaE8D0V+eeqO5TbBz4I5D+/SPa5tiNiLayiw22hvqGDw5nVkWxFnThcR
+      3Jrj3n0XkslBZ3c3iU0Dy8FLu6SkDFEQKC4tpzAkosgSxaWF+BUHsggWez75mKiqO4X//j1u
+      rKdp6Oghr7gYk2LjXN9Rljf3OHakGsx5lBc80MOLJhuBzQmu+lZoaSih69JXaSwxo8VcLHpC
+      kFdEYVkpsiAAIr19Pdy/P8SsLlDR2IEsK5SUyLS2HGFtbgJ3qIjkvpuqxka2VpdpOHLkU906
+      nhcMXWdp4j7rM5P493Y5/sprQM4QluNfwPMYEWYYBoloBO2g2o/VkcfXGotzhrCnYRgGuXfE
+      ozyP4yEIAra8x9Nu5ATgKaiqmnOF+ASpVIoXZfuYE4Bn5PDtJwgIhoGBceCVKSA8VNQim6jq
+      49lD+NRrfHwOxkFpDSFbRtswjEcSXT08Cz35HP2wHw/I9uFBf3J8khdDjL9A4t4l/utPf0sk
+      bYCe4b133mZwcIBr124RSKrsLI7x9u9uYQCGnuSjn/w9IxtR3MuzrLiCRLYm+Mk7HzHQf4O7
+      06sAZIIb/PAHvyKUyT6stwZvPXLPZGiXX7/9KwZv9XN1cBwNSAdW+cEP3yGsZs/56N2fMTh4
+      iw8/vI4vnmFzZhR/2sCzPMrkmp8ckEokmBq8SSwcPGzLCcAzsrXho/dkE/ve7CA6Smu5ePFV
+      Lp1tZW56CSQrVVYdX9og5nFRWFP/6PtflGnvPs2rr13GiHkA2Nz2c/FiK2vr3ifcVaCu9TgX
+      L71GpZgiBqxt+rn0SjObm9mH21JYxcWLlzjbUYY7mA0zS4XdLPpNHG8qfsJ1Xy52VhYI+fZJ
+      xh5U18kJwDORJpCWaa4swevZf8QfUrIUIRtRABqOVLK+5MLtD1FRUvDoJXSVhakR7ty+jaOk
+      DvQUgbhBRXUzSd+T4nMNtpamGbw1gFe0YdeThJISlZUNxHybGEAy6GJw8DaTW3FqiqykEyEG
+      +oeobnh5g10+SVPnCYorqx9pywnAMxDfXcYVDHN7ZBbXzgaJgyWLYRjEfBsI1goAJHsNRmiR
+      UMZCgf0TRiVBoqXtKEImTWFRAYmAhz3vHkN37hLY9+CNf1rOHYHq5g7OnD3HxTNdJL0uPH43
+      Q0Mj+Nx7BJI65vxy2utL0CULFpOEyZrPlbfeZGtmnLj6Inr2/HHIbYKfAXfI4I03XsVpknGv
+      zhNJqUjJAAMDtzDbi+jpaSG4u4EiS1QVOAnmlSCbg+TpEibZhsUkI+l28hUnLc3nGB+dJlXk
+      4OS516ksshLybBIMRbAaCfr7+8kvq6ervR5RNuHMsx9WqgnH05y+cJmyfAv+3Z+4sSQAACAA
+      SURBVDXikRj5+QUU17TSJa6wuOai1O7AZLJz9lQL88vbdLfXfcmj9+ViGAa7q0u4N9dIJ+JY
+      HVmfqpwh7CnkIsIe53mMCDMMA+/uFplUNvlvUUUV32qtzBnCnkZOffg4z+OYCIJAafXjs2BO
+      AJ6CLMu5InmfQFVViL0YEWG5TXCOl5rcq+0ZWBobxtnaQ7ldYWHsHoXN7Yzf/B2SrQjRXEhL
+      pYnFhSU2gjqtjS00VyqMzK5jM5spa+igOL7G0FacPEmlrPkEx1sqSfl3+eXVu3zzW98iz6Ly
+      wc/epfm1r9JcKDI0ssSpU80MfDiILktYS+s4292GKED/ez8lpRSjqnDy/AVKHTI33/tnCjvO
+      0d1UycbkTUY2U+TJKtUdZ2hxRFiOOWkrl7k7Mk/f2T4UMtwfGiCYABQnHfV25heW2HCnOXKk
+      mVOne7E+zy6gn0DTNNZnJ6lqbDncBOcE4BloqC9ieMVDeWcJvqhKg1mhqOYIp3pOHB5TW5LH
+      1VWNV3qa2F9epOv0eRoObAFbo6t0n3+VZqfKncF5tJYK3O5djjVWs74foavWQnF1HVsLczSc
+      PUo6raIFdkgUNPHm6RYU6cGELTuKOXv+Cgn3CpseH4WyCXNRDfF9D1pjJYYo03P2LI3FMoOD
+      Q9BWgappLIxNUttxBpMkkEnECaVkXrl0AbNJRgCqywu5Ph7m4rm2L3p4P3dWJkbZXp6noKTs
+      UAByS6BnQClqQPWvEg94UIoqUERwr89x9epVrt+d+pQzUowPDXL16lXmN/cBjeXZScZGp7CX
+      lyPpKnuBDG3d7fg31rKnSDbaKiQWd7JGNankCM2WANevfsj0qouPdXapSIDJiXEmF7coLCzA
+      u7ZMSesJbGKMcFLFUFMszU0xMTpCfmUzAEsTg6zGbNQVZaPPZIuTtrpibt24yt2JpRcyDvhh
+      Wnv7qGxseaQtNwM8EzKVNp3JjT2qao8BUN7Q8cgM8ChmTpy98GAG8IoUlxSxuzDH2Y4eMnEf
+      m+ubRBNx3O4QUb0DgNKmLtZu3iAjFWEg0HriNC1qmuv9A7Q3VCALArLFRk1NLTZ7G3k2Czfv
+      bJHZi5MJecmUtFEiypQUOlhbWuPN7j4IrHGk+wLm/VkWXCFaK/MBgaqmY1Q3tTN2/Sre9BHK
+      voBR/FMiJwDPSO2ROiaurXDihA30FEHXKlf9PkRzIa+80osiKtjM2YlVUgxm7t1hxWSirKGD
+      EouNsopaumsKGbo/Sl2xxMm3vktTkYnI9hQbrgRmiwlBNNHWXMaNqQRaaI+rd6dQJJG8siak
+      AxWkPa+Q4uJiFAmMlBdLVS+v9baAFuXu6DpKvp2y0iZONJXRPzjMyaOVmBWZ1t4z3L8/Try4
+      DzMJhvpvkRIUMJfRbQJSElZLNiI4Fd7HFZcpt2bwJkzUVhQ8aVj+5DEMg5B3n7Dfi2Iyk1eY
+      9Y/KGcJyPDPPa0TYxvz0oSNc7ZF2vnOsLmcIy/FyIAgCDR1dj7U/IgCRSIR4PP6Fdep5QNf1
+      F6oo3B+DVCpFgygi64mnH/wnTm4J9BRyvkCPE41GkWUZi8XyZXflD8Jutz95CbQ7/gF/99Ey
+      9YUS5Z2XudSk8MN3R/jr/+57z5w0KR138/f/+AH//j/8W0xA3LvBL25M82/+7BuPpdrYXxri
+      7381RHVZHs7aHr75eu8T0nEE+Nv/+D7/4//03z5jb/4Awlu83T9HscOEo7SenqN1LI7OUHe0
+      ksX1FCc6atDj+0xupijWdpjzpLBI0HTsFJHVIbajMrIAR3vP4Eh7uD+zim4Y1Hf0UKJu41Ka
+      KUmscndhF6tJobLpKK11pdy5+g6qkg+ygzNnezCLAstjt1kPppGBps6T1JU62Jy6zbpexcXu
+      RqLedW7dmceeZyav6gg9rYXMz/poa69ibnKS6vbj5FterhWwpmnEYjEURTkU3ieOQCYWoabr
+      Iv/2ShX/2//+fd74X/6apsY61kb7sTaep0TdZnLPoNERoX94nsbuc3SUZJjciBH1eDhxqoVb
+      14ewVrXy+qk2WltrEHSV0VsfMbu8wVrMjpaJc+uj9/Eb+Vx5/RJOi0wmGaGg6SR/9c3j/N9/
+      859xd9YwOniTpJjH5TeusDU2gLWsDHc0wp7LSzrqZXh6kzOne1A+71pXWpqSxi4uHi1n7P4w
+      qUwNiVgMw1JE3H8Xgxr2tnZxFjVieNz0nj9DycE+cWZN5tTZS1jVfWbXNjAn92nuPkWl04Jh
+      CEQ3EyQxUFNpmo+fpqXUyvi9e4RKC7EUVtHbe/KRriTSIifPv4JTDTC8tEdtUQPuuIxN8JJU
+      G9BUjZrWbjpbyxm5PUy6NZ94IoVve5GktewgGdbLRTKZxGazEY/HD/27PsMQZuDZXmVkcJCK
+      5g60ZJjRiXksQoirQ3PM3L1BSM3w/X/8OfUtjfzyhz/At7/Gr375PubiCpaH3idR3EFHQzm6
+      mmJ0dJTdmWsMbJv4V2+9il2GmQ9/wEysCEtwlnduzx/e2b+3yfjoCLqjCrtJoK6lHcU/w0fD
+      K4wPfMjt2W1qKkvIRH384qc/I6+y4fN/+A8IevfYXF8lI9pRDsqUIkhU2WA7mmE/kqK8wIGa
+      CjM82E9/fz97oTRaJsnO9ibr65s4i8s4crSN1fEhBu+OEU4+vsQSJYXiAgfxZBr/7gr9/f30
+      D0+hf5yQVE+zs7XJ8soGNoeddMyNaK+kPE9hPxwHdPweF5sbq2iWPBRgf2OeW5MuOltreA4d
+      Ov9g7Hb7YeKCj2s+fKYlWEuGeec3A1y8fP6wrbTjHJHlQWZ3UxxvsuL165gUM3/xl9/DJEJV
+      aw8XTx+j59XvUq1t8oufv0sok7Ux+t17VNbUI4oiggB7LjdWm5Xqzktc7q5/cGNdx5Rfw3//
+      199jZ+wG42s+7AVOSKsIksL5y1+hqbIADJ1IJInV+sVlsjR0lcXZWcpqG5EfGr3qI/VsTU2R
+      kp3YTCKy2cnpC5e4dOkSFfkHevXQHot7GRqqClDsxbzy6uucaCxianH9025EJBbHYlIoqmrm
+      0qVLXDrdhSg+mi3CUVbPsaZKtheX2XWtsLy9zfLKbvYAPc3U2BQNra0IQGl9Oydbi5hfdT1+
+      v5eATCZDNBrFbrcf1nx4ogAIkkJtWy//6//87/n1P/4n3DENkyIjmwupl/dxmWopdVZz8VQR
+      t4YnmF/cQBMkLBYTArC1MM22N4yWzqABiqLQ1H2etTtv89vrd8gYMqff+Abb4zeYmZvH7c+a
+      /gVRoryumc6jbTitClarCdfGGnveEIIkopgsBz4xAvbiSv7iv3mT3779a+KZL2IvL1BcUcvr
+      b7zO/sI4nmj68E0i28qJ+5YpKC5HALRMlHsHM8C2L45isdHc2ccrR4u5NzbH9vIk12/0c392
+      jfLSEhBERAEE0WB+dIibAwPozhoKbArBvbXsDHB7lNTBDCAqFmrr6qmuKEUWdTxpC9948zKX
+      3/g6VtUHgkRJVQNf+8abrI3dwR9TEUWB6pZOBP86e6HkZ/zOFw/DMIjFYjgcDkRRfJBmJqcF
+      +mxyWqDHeR61QIZhZAuX6DqCIGC323E6czXCcrwkCIJAXt7j9RpyhrCnkJsgHyeZTCJJ0kGt
+      sOeb3BIoxzMTDodRFAWr9dPKgD8/CILw5CWQe3aQiUQ1lxo1fnptna78MJmmC5xu/uM5zBrp
+      KB++9x7+pEbbycv0tJQ/9Rzf4m2u7zr5s9c6AXBN32JGreWNE/Wfed6993/E/R0Vmyxx/qvf
+      oqX88UzBAN6VEe55HHztXPvjX0Z2WIjmc6REZHJ2jfa2clbXUrQ25nF/ZIxoSqOy+RhHSmWG
+      7k2S1qDhaA8FqQ2GFrxYZKhv78UcnGNPauRUeyVbi+Pk1Z2g0KwzdvsG9oZuWg/LJRm4VmeZ
+      W3djL6ykt7uVpbG77AUTmAsqONNzFO/aBCOLHmxmhZauU1TIAd6/M4vNYqKstpVjLdXMT05z
+      pLuLsRu/IaJZsDhL6DnRiUXUmR0fxh1MYius5nRPO6uTt1n1xFEUC8d6TlKe/3w/5A+jaRrx
+      eBxFUTCbswaaJwpAMrDHdtTGb8du0H7531EQXiBulgntLnNtaIrm42forMvj6vsfIRQ3culM
+      N/srYwzP7XHm1dfAt4InqrKxscfFN99ECKwxcHcSZ81RXu3rQACmr/0Uf8FF/vxiI6m0TjLs
+      5vqN25S3n+Z4QyHTcytYjRCmknrC4TSZkJf66nwK8ywYaoLB69dYnB5DOv4d9HSEax98hK2m
+      kzPdR5gcGaYoXybtaOZIVT777n16XvsrjogL/H+/6ucv36jl7vgyNR19nDpSyMj0FkVyHI9n
+      na1oDRHPGhsRK53NFQ8GJR0jGLexNruAtaQN0YgTDMTYN3aw1HbSV5NPMq2xNXGL8u5LtOQZ
+      pFQIbyY5duYKDQfexGsB8O2sE28uIxbyYdZAU2PE0pDYddFSXYwIaDE301sJXnv1NdBUkrvT
+      eKQaXrtcw/bUIDM7EZzJNEdPXqDOqTE4Nk9Zo53iphOcPVLM/bt3iNdXE/T70YCkYOG1y5cJ
+      7SwwMbdJe0GEkFLL5cs1bE7eYm6nmmTS4OyFVzEn3Yyub1He3fp5PY9fONFoFJPJRCwW+33s
+      ABqjH/yEFbGZ3qYi9tcWWPdGePtHP6Xt3AXyJZ2FW2+zYznCkZpCMv5F/vHXo3S1FPKDf/oV
+      C/euMuM302Lb5727a2iGTGfvKRbf/z5zgewdpqa3ONHTgijKWC0y3//b/5e285eZ++1/YXrb
+      z9s//gcmN8MY4TX+6fs/xhXVIeLi/sIOA2//E8GCNs4dbwYMfvQf/4aKk5eJzHzI4Nwe7/zk
+      Hxia3npQesjQCfi8rC6uU1RVjiHZ6D15gsG3/4GdoJ9f/vhHjK74sCoS8eA2P/jJ+1RUljw2
+      KnMj/SxFTLRWPfCNL2tqxTc/xLVbIyRUg7qu46wM/o6bw1NkDNAzSUYGr3L16lXWPVEQJDrb
+      ypmc2zm8RnhzgfzWM9iMENFk1vku5PFQVlePIokoJhOe7RBNR6oQRZHa5nr8Lm/WXhAK4vXs
+      YbFn+5SIhvF7PWREG6ZP+pEIIkU19RAK4PXsU9NQiyiKVLY0ENn1gK4SDAZw7/twOBzP9oT9
+      ieN0OjGbzQiC8PsIgET3pa9hCyzjCqYOW9/6zjeYvPouN+7PUXfyLYpC0/zmvWu4t9fYCUbY
+      dCe4eLEXUZIpKy3FbFZQtRSjA1cZmZgjo2dIHlyutNiCx/txotIUnqSZ+pICmiotbHni2Ivq
+      +Na3vk6JXaK06QTffPMc1gPr08ZegLbmSkyKAmRYDwm0VxZQX1vE7m4AxVLI177zbWqK7dnL
+      62k2lhfQSnr4q68dY+CDD5laWEYzdDIZEJw1/Nl3vkpJngXf1iJxpYS8T/GVae89RzEhPOEH
+      YyKa87n8la9zvruG0bsTGLYSvvaNb3KyxcndewuIioVTF65w5coVGsqyD5W5qBFbbJ1AOrsF
+      m51fY2tuiPW1Ddb3wwDYHDZCwfBhGKQzX8YfyOrv48Egpjw76Bl21mb5aHCBrqPZcL+AZ4tr
+      H92k+kgHpk/5h9VEhIxixmG3EA5lxz8ZDCLlOUBLsrYwxtCcj7aGyic/Hs8hqqri9/ux2+2/
+      jytENuHr975xkv/yw3cP40U3Ntaw2u34PXvsrG+gylbUcJBM+VGOWMLsh6JE44nHkrymkzES
+      qQya/iDy9MI3v8v4O//Er379S+7N+TnfUcgP/+tPubtr5WRTHpKs8LHhU1HkR5K8nuxu4d2f
+      /ZLh6VXAxFtnGvj+D3/KtQk/p7prEWXlEUstkoUTZy5wpvcoJsEgkYiRSqmH/Xn4+rVdr3O+
+      Ksw7/dOP/Q5BNNF9oou5iXFSWvbb4N4a/TcHGJ1axl5UiH99jhsDt5iY26SwpABdTTE5Msjg
+      4CDre6GPr0Tb0RZWFjcw0n7S+a18/Y0r/KvvfJXA1hYAluJ6HLF1bt4aZHhsBmdTF76pAW7d
+      GuDmjJeuphKQzLSfOM+3Lh9jeOg+SdWgqukY3/72V9mYGsH7UP6eZNDNnduDDAwv0NreSGnD
+      MTyzAwzcGuDOjI+jLaWgOOg5c5nXusu5NzpLRs+mgd/a2CKjw9ra2mc9Mn+yGIZBOBymsLDw
+      cP0Pn6EF0tUMKiImSSCZyiBLAoYoZ6uVp1VkkxlFgmQiBZKM1WxCU9OH30noIMqIhoaKiIRG
+      Mq2iSBKSYkYSs53SMmlSGRWTxYokGCQTSSSTGZMskk6rmMwmOKjCbjbJGJpKWgeTJJBIJhFF
+      CVFWUCSBZCKBIJkwmxTS6SQms+Xwoc6k04iyjCSKgIGaTpNWdWRZRJYVMhkVs9mErqmoOsgS
+      ZFQDk0l5IHiGhmaISCKoqoYoieiagSQJpNNpDEPAZDIhYGQ/CyImkwK6RiqdNabJiglJAEQJ
+      AYNMJoMsy+gGyNJB31Tt8A1l6BqpdBpRUlBkOVuRPq0iKQqyJGHoGghZ1xJNVbN9MgRkSczW
+      wxKzx0iyjJpOoWoGsqIgy9n7a6pKJqMhm0zZczQVUcyum7L9kBCAjKoiywqqmiGRSDx3WiDD
+      MPD7/YeGsIKCAhRFEXJq0BzPzAurBs0Zwh7HMAx0/UVPGPJspFIpRFFEUZ7/esK5GeAp5HyB
+      Hud59AX6NOx2u/DETfDo9X9mPaAS3Znl73/xIQYGw9c+YDe4zU9/fu0Zb2UQ8HpIPbFQQ5Sf
+      /d3f8eMf/4h3r90l+RkFHcau/4rN0BO//lzZXVslmtHQEiHu3p8goxuEfbvs+WIsLi0BsDIx
+      xIY3CmhsLC+T0iDidzF85xaDt++yH8lqjwK7K4zMrGSvuzrNzRtX+d3vPmRobIaIZ40Pr2U9
+      Sec3PNmNeDLEzRvX6e+/xezKDpoBWibB8OAtImkd0FkcvcON/n7ujEyQUA08ezvEkyqpqI/l
+      DdcTqs+8PBiGgaqqj7i3PFkLFPcwvrTL8swCrpVlgmqc+5PzmCQrdrtCPLjH8uoqdwZvse2L
+      AjpLk/cYujfC+l6QWMDFYP9NRmfXSIVd/M3/+X/wi9/cxBfP4N1aov/WHbyRj1WJKWa3YvzF
+      X3wPfeUO9zf2WRgf5ubAHbyRJGHPBlsuDzPzi6zNjuJLGGwtLxBOqp/viH0CixZiy58iHAwQ
+      CQSJp1V8e9vosok9txuAtJpmZXEJHQOfx4NqpBgdm+doz1nOnurCIgmAzsauj6R/j6QBVU2d
+      XDh3jIKCRs72HENI+KnrzsYStNeXZTfhahyhoI6Lr5xF9a8RiKvE9teJawru/SBgEItC36WL
+      HKuWmV3aJxwOkM6ozE1Ok19c/NKXSkokEgQCgUdm9CcKQGNbK9vLq2xGk1w5amNpyUPGVoZN
+      0bk/NoF35R4//XCcYnuGn//6Gtv33uHD+Ri25Bbv3ZoiEUtQUdfA5Hs/YyWuUFZcSENzM+aM
+      m1/8ZojqMoUf/vidBzc0DDQ1QyiexmbS0EUn5ZYYP/7lddbHr/Kff/A2q3shDAPci8N8MLKK
+      Sf5iMzsW1lYR3N4jGglxpK4EVyBOICJQ7HxoLSzbaS2BBdfBXiriQihqQc4EGL57D38sjZ4M
+      kpby6aixs7b3KXsuQ2dqODsDLO88qPBoGDq6ppLK6MiSyPpWiN7eFnyefXQDONivxCJJrHkW
+      SEUYuvoeRlUXpY4vLmjoTxWLxfLYxv2JT5C9og3dN0E85aC1s4OJO7coqqh7xLBSVlVLRXkp
+      aibF/NQEx09foLTICYbO0ugAH94YxOXeJ6aZyHPYKS0rR/StMjy/yv3xVZpaH/jvpHyb/PLX
+      73Hsrb+ky5nm3fffY3JmGZ8/gm5AW99lvvVaH6KR4frVazR2dGL+ggVAMJcipHbwx0Sqm2uI
+      7myim8yYP/FqLWo6TnR9kowBWOzosTDmvFLOHatmYz+Kd3eT7c0VJlddbCwtPb40EUS6Tmdn
+      gJbqosNm9/o8d+6NU93WS4GSYHltjfHRKdZXF0lkdJIxL9ff/QWjHjMdNU7+f/be80mu60zz
+      /N303lRlZXmUgS8AhCcMCdCKTiLVoig3Uve0iZk22zER+w/s9sZ0bHTETsTuduyYUKvdqNUy
+      lERZUjQgCVtVAMr7qszKSu+9vZl5790PWQAIAiBBtVoS0Hg+oRLXnGvOPee8z/s8L3orh48d
+      Jh/xt+L5/8Zxjf296bc7baw12jBmAqRNLqzuQUKTF+kauHOdqZ0HDnP57R8xu7ROQ4ZUIo17
+      ywAOiwFQ0dVh4+rYKGX7Nva4NDi7enBaTdf317sG+MIrL3NoZz9yNU9NZaWvx01L/CW04um0
+      tLKf/90/ZPHd1wjnft2qJhVmuUFRo0OjttMsrqG13MqWCoKK4b42NiJZ0Lpo0ySYmJ5n0RvG
+      qFcTT1d58tnnePzJZ+jSVSh/WM2mKAS9SywtLRFJ5a93kK6hER49eZyedgu5gIdtj7zA6dOP
+      8/i+PsLZCgZLB0+9+Hm2W0ssrsdQAK2li5FuLXOrIR70gVvxEVEghXwqjmJwYDfpSCRi2No6
+      MWgV0pkidrOWclOD1SCQL4lomiWSBZHI/FmCpkO8cnKAWLqExWTAZHOilqvE4hlc3T0o1TzJ
+      bBGrs4M2mwmQSKUKtLc7NqugyySiYQSdGbVGi0kr01AZsRp1FLMptFYXzVIawWjH/K/sbvDh
+      KFC9WqIh6DEbtFRLeVQGK3qNikqlgslkQqzV0OoNCEqTQrGC1WYDuUEum0MWNNgddpqiiMFk
+      bBFmtSoqnRG1IFGryRiNOuRGlVS2CIDebMNmNiDITSp1GdOmb2ejVgWdAa1KQGnWqckqhGYD
+      ncmIoEiUyzV0Og1qjQ4VMpVaHZPR+CsRw9+LUaBrirBGo4EgCFgsFhwOx6+OCBPzMd46cx5s
+      PTx5+gTm2yWh3IN4EAa9FfdiB7gdzGbzzR3gARF2Kx4QYbfifiHCent7H6RCPMAnx/2UCnHH
+      ecrC+BmiRZlq0ssP3rqEgsL8+CXihRi/eHOMRi7MuavLVHIBxibWKITmuTDj/+StkGqMXrhI
+      5TazjFo2wvuXpq5notYzfs5Peu7usI0ql9//Bd/93g/xJQofu/3MhXdJih+9TSzgp9KUkMUi
+      k7OLNGWFUjZOIltmfTNLMhxYR9ykJxLRIMVrXIVYZD2carXtGpEmKYDE0pUxYpucSKOY4syl
+      SRRFJrK+yHvvvse8J4wiFrhw7j3OvPsuMyt+JEVheeoSZ868y5WZFRqSQjETI5GrUEsHePPt
+      dzh/6SrZsggo1Ms5JsYucPbCGKlCjUY+wjtnWhqFmdXQ5kJboZAMceHse1ydW9ts3/2Da6P5
+      XRFhlZiHq6tRPDOzTF+dpijVOD96BZWiptFs0CjEGJ1eo1oIc2XKiwqFelNCLOdYWVrAsxFF
+      VppEQiEC66tshOJE/F7Ww0kUuUnIt8by6jr1Ro0roxdYXVkhEMugNGuEYilSsSCFaoNGQ0JR
+      ZGJBLwtTY1yc8aHITcIba6x4fWRyZZpimbXlRYLx7PWIyeRb32ZD7udzLzzKD7/xP4jmi8RS
+      ORRFJh6NUCkXWF1aZM0XoikrzI+dI/0xGm9VOY4/I5LPpAgHQ1TqTZJhHyJafP5W54+FfNQ3
+      zaSTsRDlax2gXsQXTQOQiAQpJOLESyIgUy1lWfWEAAj6A0QTceqFBMuRCqcfP02nVYtcL6J1
+      7+DJJx5HzniJ5eqE83WeevIJ+jQZ5sN5ytkE6XwNMR/BtfMkR/cOcvnSOI2myPjYVfpGDnPy
+      yF5USpNGIU7XyCmeeuop9u/oQwCalQxjM+scOnGKLl2eqeXAJ37JfptRqVSIRCI3ifnv2AGG
+      d24n4PHhL4h8arcJjy9Jw+DCpIepmZlbtldKUSZXYhSzSQrVOpde/yYz4ST/+N++QTyb53t/
+      /zcEsmW+/ff/SCQ0zU/emqSSixDPN6hXq1TEGj/9p6/jC/j4b//j6/zo9XfJZFJMLXhJecb4
+      7htXaDQlUMB79S3eGF0mtXSOV9+f5+zPfkgwU+HsT76Fb/Mtnl8McPToCDqLm319KpZWPHzn
+      1TeoVbN8+59fI5tNUaiITLz9Gpe9qbu6ga6BHtKBGMVCnl1b3ERyFTJ5hXb7JyCZFIlEqsiR
+      Y7vwe1sObSpTF+pagqZSJ1uRabcZ0Rqt6OopLo5OorU6UQNR3xKXx8YoyFYclhvzb0WlRq+5
+      1ULYYHOx0yHgT+dQO7ro1NeZnlumUm+NqZ6FCS5fvsx6pNUxi9k0HX1DmHQaege3Ucll7qu6
+      YXq9/hZrlDt2AEvvLqTULBXRwK5925m9PI69sx/9RwZ3FGK+JSYmZ0ik06RyZTQmByMje+lp
+      b2N490O0m9UYnP206bJcmfWiUgvozFZ2jexn//Y2wskSit7J137v9xh0tXiCtflpdhx7nJHt
+      A6hUMguLaxw8cYodfe3U6yWuTszg86whm9pR0/r8ajUCzaYCKNRqdew923HIadaXJ7BtP0Y1
+      vMr45AyJeJpkvnRXN1Bl6oZqiExRYWBnH/lAmLpWh/ETBLyatSJLq6tMTq2yujLLtVnGcLuG
+      RU8Mtc2FTgWC1sTJx55m/65+xt59l7IM7d0D7N69G4tapFCu08hH+dGr32ImY2Jn1+3kiwq1
+      uoROq0aSmihaM4M9DoL+lnVi79AOdu3aRXd7yyBArVa3cmUAWZJQ7jMD0dsVPL/jo9MZHRhS
+      PpImN/aeYQJjZ+ka+GjnBZDZ8AfZuvcAve23mhBdQ10U2bb/EXY6KoyvRBGkJhueBebWSwx1
+      2zCYLGjVN25+3+Awa9OX8fiCSLLAQF8ns1MTeP2RVurBcC/tfcMcOrAPs6a13yOnj/Hu66+z
+      MDXKeqOfkR4LJ/d08M3vX+LYiYfweTcY2nOALZ2fpO6VGlOzRkGrR6dz0SgsoDd335RjI9Vr
+      RCIhYqkcSA1i0QiRaJJrJTbyMR8jpz7LU089zVO729nItRY/zsEdbEyPXQm4ggAAIABJREFU
+      4XK3iLVGrcDS4iqFioherwUFxGqJQrHYEtcooLV389nPf4FOJcV6LHeDUVYgnYjgW1siqnKw
+      xeHALGaYWd0gXyih2ozeVEoFCoUC5aqIAljbuyjHvHh9fqZnZunq7UNoVMmVatRrJcq3MfG9
+      1/ERUSCZqG8N2dZDj9OEZ3WZzoEdWPUK/mCC/k474YxId5uWeKZJl10gUlLTYaiz4ovS0dGG
+      0dFOKZmit7+HVCyGs7uXVDiIq8vFxuoaZUnLyMg20pEwqUyWtt6t9Dm0bMTzDPR2oTTKhJJl
+      +rrb2FhZpKkxobe00a4TWQtEyayOEnE/w1dOdLGy4gGDg+3bBtCpVSiKRNTvJZYV2b57N1aD
+      BqmaZ8GXZM/INpqlDMueIC6XC729DSkbw9ozhOljeLVKPkVNZaHNaiCXjKKxubHo1WSzWZxO
+      J9l4kESugtbspNMCoXgWtcbE4ICbYlVCr4iozE4MapDEMmVJg9CsY7aaySRTODrcFHNZHHYb
+      qViYbEnE3bsFhx58/gD1poK1zU23y0Eu1zqnItVJZsvYzVqagh69XMEbjKE1WOjv60arViE3
+      RcLBEKKioaevF71cxRuIoChgcXbS43a0lF+1EsFQBJ3VRa+7DRolkmUBm7aOKJixm3X3ZBRI
+      URRyuRyiKCIIwjVp5L0ZBs1Fvbx/cQLJ0M6zzzyB5T4h3e4V3Isd4HYQBOEBEfZxUBTlgT3i
+      hyCKImq1+rZz6nsJPT099+YI8OvEg1SIW3E/pULcce7gmR0nVVEQc2HOjLbCnt75GTIfsRCS
+      G1Wmp+a4m9fFN3eVcK7K+sIk6XKTxctXKN2hL46feY1Xv/99xua8yFKTualJKr9eLQwA6XgM
+      UZJRGhVWvRtIMlSLWbKFKp65y1y4cIELV6ap1SVWZsZbf4/NIDZEUplc6xiRIJWmTNS3zMXR
+      McKpAslEjPqmCi6fSlIWG0SiMUAiGolf9wWKxWLXK8SU02EuXbzAhQsX8EZamgG5XmH66igX
+      Lo0SThVBqhKJZ2+6Br9ngWy5ASgEQ9cIMIloNA6KTDywyqVLo2zEsv8mFGR37ADJtatcWY2z
+      PnWFt965QFmu8c6Z95CaCuVCyzmsIbUEGulkgky+hCyWePftc9QViVyuSLMhkkzEyRbKiJUS
+      1XoTRW5SKJSpFLJUGhLT598mnGtw4eevkwPESpF4PEG1fqM06dnzkzzz0qcJnfsuY940595+
+      i2JTppBNEU8kqTUkSvkcDRmkRo1SpUazXiURT5DJFpAkiUKhSLmYpdaQKBeyJJIZmrJCrVKk
+      1pBoimVKHxPlaKRDBPN1ipkUax4v1UaTZHidUlNFoS5w4sQJThzah16roiSpW38f3YumKRKO
+      JagXoswHcjSS62zk1Tx8eD80akiZKIFsBRSJ9XUvIOBZXweaeL0b18+/7ltH2uwN+UiGwYNH
+      OHHiBENdTgCkWpGKxsHxo4cIzY+RKZfwbiRuXIBcZn09zIav5TskFCKsxUqkN5bJSXrCazP4
+      C1qOHj2MXhbvKw4AWlO3RCJxExF2x0nctl07eHVpHVkt8swuI55AClHbjr4e4VvfP0u/S03e
+      OsKIxs9i3kApsMrpz38JUFi4+HN85R76pWU8FTsdjnYGLSmmiwN8ZkeFv32vyH7NCoL7wE3n
+      lGo5Xnv1hzi7OlmPS/zx7312s4cKqDU6rGYdtWt5Bo0iE1enKBdixIV+BktXEE78R7rCb7Gi
+      3Ye09Abq3oeYH7vEH/yn/8A//PVf4+50s//YSa6MLzDQoaJs30dXbgxl78sMZ85wpnaYP3z6
+      Nqa4m3Bv6WTDm8RoKbC920W8WKWcl9i6XU+gmMHn86HSGdnS200ln26ZSGlNDLrN5NNRRuMx
+      Dj/yKNpailp2EU9Ax9BgP3qngHc+zJC5g7rWjvGuFvUNwv4NKloNbZ19tFlb0xFBUKFWa7CY
+      DXw4hy+3sUbn3oephtapywLd2/dw9fIkOWMbB/dbmLtUYeTkQbIxH3XM952EUqVSYTKZbv7t
+      Thtb+3bSTCxQrWkZ2buVuYkprO5essujLEVz5KoS1GtcPHeObCGHWq+mXK6Tiy/z6hkvn3nq
+      EJ3dPZRTUZpqPUO79pPZWGbqyjSHHz1+23MWM+tMTPnIZIpoBIVrs5x6IcQPvvs9xJ4TnNi+
+      +bVriISCfnL5EuFQhGPPPsPVM2+z5M9zZI+JhaCe33n+KdoMm1kuKgNf+MM/RxOdZuD4s7z4
+      +WdZGR3/ZDfQ0g2VMLmCxJYdPeRCcWoaLSZ1S6hjNBox6PUIgFrT+tto2HQh1mpRKTKSrKC3
+      uXnkxBFMlBkdnUIyuFCLaZLpBE5X50fb9V2HgMFoxGg0bhpqtRBdX+D8xUuoXdto+9AUfWFt
+      g5R/mVBwg2ShhlprotOmw9zR3SoyKNAS0eh0rC0u8RuYZf6r4nbZq3e813qTC33aS8Loxtm/
+      Ff/F9+gcGKKtbxib0c6Tz7zAw3sHGBzopXvoIT794gu4TWocnbv48uO9fPcXV9Haennxpc8Q
+      Gv0FKUMvLnWa99ZEjm69vTW50eymrcPOscee5qkTB643Tmfr45WvfIWXnnnkujdoKeohpenm
+      5OERNCoBvXsfXYUpApoeuu0dmFVpNqJRssXWcGewODAZNPQObyWwOI9vbgHH0DB6nY5cJkUw
+      mgRg7sKbeBIlFkbfZSXyYfsJDfpmjYJWh97gollYRmdsidY1OgN2ux2bxYQggEZvxG63Y7cY
+      AQGzzcXJ4w8xcXmCfD5JNFnC0d6BqllHQWDYpeHyQoLOTudNZ5SbdUrlEjWxAYpEuVSiUq2h
+      oMJis2G322+ShnYP7+H0qVPsGupGJUCjXqNUKiGWkyj2YR4+eIDTx/cRi6dQENAajBg0ahBU
+      dHdbmJ9dQa0zodNqABlRrKMoMmK9fl+uCdR/8Rd/8Re3+w9Braatzc7Qtl24ne2Y26zsHdmF
+      3bWFYZfCwkoAV98AB48+TCG0TCQvs3XrAJ3uDkaOnkRbStPmsrI4v8jQ0cfZ1dNOt8uOe2gP
+      W9wOTFYHHW43XW43bncnnV0uerZsY/9wBwsLyxjauulssyIAzvZ2Ojs7r0+HHG0utuzYi0WM
+      U9V1cWDPVlxOO+WEB/uu0+zoaqOvy8raephAJMapxx6nx91BR4cLq2sQlybHRlbLS889Ss+W
+      ATIBH66hPWwd7McoNDA6O9BKInp7O2a9+iY9gMWsw2zvxGrUoddoae/uwaBV0azkCEYSpAtV
+      XO1tyJUsoWiSdK6Ku6sDk8HQumabBlljoZqJEE0X2f3QQ5i0aox2OxqdmR5X6+NgNBoxm80o
+      YpFQNEFTbaTbrmUjEKFcVXD3OIj4/KRSadBbsZsNCCoNJqMJk1F/7SEiFtNEE2nQGOnt78Vq
+      NmK0WNEKAiaTAY1Oj8lkRq9VY3W60TUL+MMJ+rftxGHWEItmsJp1JFI5LFYLAlCvt4oD3kth
+      0GuKMFEUr9tR/tVf/dX/cd+EQdMbc7w3n+TTzz2BUSNw9f2f4okWaR/az1PHRlD9knktD8Kg
+      t+J+CoM+IMI+BrIsI0nSx2/4bwj3CxHW39//gAh7gE+O+ykV4o6L4LB3kXxNoVFMMrHQUmGF
+      1z0U6neODTRqWTy+G1XIK7kYHn/ijtv/clAoJAOcO3uWOU/o17owy6XT1CUZpVnDH4wgKSBW
+      ChTKIigKYb+XktgaLZpimeX5GRZWN2jKMrlUioYMyBLJdIu4SiaTIDfw+fw0JBmkOslMa+Hd
+      qBZYnJthcc2PWK+wNDvF1NQUU1MzxHNlJLHM0vwsq74wkqIg1Yt4/S0rFLlWuOG6pyhk4wGm
+      Z2aIpFrFNir5JHMzMwQTLXIun0kjSq11TiadRJIBpYnft4HYuL9Hvzt2AO/Vt7niTeOfvsQ3
+      X/0FNaXO6z/9KRVRQpIkmk3pep6M1GwVmihnvfzsF1eQpCayrCCWMwRjWRRZRpblm/eRWseR
+      ZZkz3/o7JkJpZEVBkWWazWbr34q8OQVpXmdAm2Kev/uHV+kd2ko9l6KBgiy32iPJ8uY+yk3y
+      N6nZRJJa55Y3zynL184lId/lIFgMrhIqNCilE1yZbDG+cf8K6bKELJWZnZxi3R8DRWF6fBR9
+      ezc2TY1CTca7tEhVAiSR2aWWj+jCwixIFVZmJlkOZaFeYnbNjyKVOfveKDZ3D3ZNjVJDR3f/
+      ALF4jJ6+PmxGgUtnL2Bo64R8kInlIM1ynKtjk8SLdaScn8Vwy1ZFqcUZm4/S19NNuZijUU1z
+      aXwOV3cPieXLeJIV/KsrFDc/bGvLs4gSiIUUC9MTrCeL/5L367cKoigSDofvjgjbuWsHP1z1
+      0kDkuZ0GvOE0FU0bVl2Fn33nDdL5GOZdT7NbWOb91SrOrj4+fdRGKrDK6z9OshBt5w+ebmdh
+      XcQYeovRUh/m5By9T/4+2xsLvDERxiZFMe37HYJTE8hlFZbnnmPqnR/S0FsoiFZeOu7kb3+6
+      wENbdPjFXv7X338BEGjWimRKdfY+tBdKSf72b/8Jc28Pi94Cf/rcAD9bt/LVUy7+23eu8Ecv
+      PsQ7o4tEA34e//J/4OLX/wvWkV6svQ8jeq4i6w2I+l6+9vlPof2YAHzPUBejG0l05hy7etzE
+      SlWK2Tpbt5vIb1yh7/BjlCJhmvRg0KhIprLsGBzAbhTwNGqkEnGq1G75qjoHdlMKLCK69gBQ
+      CS1i2XkCt01FFgcWvRq9uQ2z2Uyb04lSCKF0DDPY04nQZeX82RkaXW6Gtg2zsebB+UGvLrUe
+      uZylKA4w0N9LMThL27YDdLvbaDMd4OqCh1uVGwrJeIRdD58g7A9AzyfRTPx2w2Kx3J0m2Daw
+      i0ZsiYqoYu++IWYnZ7C4e9BLMnUaGLQqllf9GExmNGo1A309CAi4tuzkxZdfoBaP3TiYSsXO
+      Ayf51CMjJBJpLl+e4tNf+gMOD7tRm9sZ2bGTx55/iU5tjHizh6999fdoK86ykQf34G5e+PQz
+      VDOt42n0Nv7kz/4jJf80f/1f/4EN7xRKzzG+8vJzqMVblV2KLFNvNBHEIv5oFlmpc+Dpr/LC
+      Vri4HEdQq6nmU9TvYqRX23uhECCXbzI80ks6EKei1mHRwOxykHohRiK6Qa7SZM/x0/RaYPri
+      u2xkReSmSDqVJJlKIzY+nGSgYu+2TubXWkotSZJQq9U0xArrE++wlrl5hFIUGdW12lEI182u
+      dFYXDqF43YEaQNA5ePqp45STAc5cmECS5esWga0Z8G0SHhQZz8oGmXSGsH+N2n2ySvxgaaRr
+      +AgirANdZo2EroP2LdsIXHwfd98gJf8kIc02njqxD41KwNY1wpdefo6Jn/yAxN345wgCFr2G
+      ZCZHobDpfmZQUSqJ6A1OmuUEpWqBaEFLm/nW3ZuNHL5wjVNPv4Ah56eqtVPJJqmVi1SaoFKr
+      adRFStkUVQmunjnDttPPs29rV4uhVZvpdNvRWtsxG8x8+uWv8MqLj7c8TxtVRsfGqNRrXDpz
+      gVuNF3XomhXyai1GcyeN/CJ6gwuhnqFh6qavw83e4S6CiRyRcBhX/3Z291lI5EW0Rjs7R/ay
+      d2QXNtOtjKSlcxgyPsoNBUvvDhILYyimNrb03FqpUudwUwt7yVUbxH2rKHYXLSGcwPadW/Gs
+      3HDOUCpZoiWBkX0PodTyWFw9JDwL1BoS6wszOHqH6LBp2YhkqJdTlOsmVFIO2dxFf2cHx3a2
+      sxQq39KG+wV3JsJUagwa6Nu2l56ODpo0eOjAAdq7t1D1T1HWd7JteIAOc4Oz5y6x5fBp9m3p
+      xmRx0NPVjk5nZmCgB5PNSW9XB46ObtqtJixONwce2sXi5UvEYhFs20/w+PHdrFw+j673IR7e
+      ZuPd98c5/Ttfpt9pxmxto8vlxGAy09fTiSBoiK1Pc+HyNAefeZkDO3dgaUaZ9CWIhhK89LnP
+      Ug4ukVIc7N46wLFj+5kcHaNr214G+npxt9vo3tKPXu9g7xYz77x3AcXkpq/TiUpu4AuG6e7p
+      Iez107NtiA+/qiadgs7ejdNiRNWo09Y/jLZZwdo1QJfLgbOjjWa1iUktMjU5Q82yhcPbu9Co
+      NVjtNtRCKy3CbrOiVmuw2xytPCeLCYfDCioT7g43vR1GpicmKWq72bfVjVoQUKvV2Gw2VGod
+      /b3tzE1epahycuSh7agFFRqdEavNhk4j4HB1YjNqQa0hujbLwlqIvYeO4nS00WGFyclpYrkq
+      w9t30NXXSzm4zOJGmv1HDqNvlLH0DNPVbsfR6UYqVank4kh6C7mQl5raglGnvqeMsa4pwsrl
+      MqIootPp+Mu//MvfBBGm4Jsb5/LCBtWmms996QvYfwX3UZFL/MM33+AP/v0X/uUH+zeCRq1A
+      ugRdrtunptwJ91MY9KYOUC6XqVarv8k2PcA9gGq1ilqtRqe7t2sOdHR03Fwkz2g03vP09q8a
+      zWbzprDZA7QW6RqN5p7vAPChMOgHCwgkIkGs7n6MGkiEg5jbXBQKZbo6XR+om6uQjIUwtfd+
+      yA26TiiYpa+/86aTJUJe4tkKJpuLwS1dpEJhnP19/DpvYzETp6lvw2m+u3mXLMuo1S3TqXKp
+      iMFkQa0SEMsl0BuoV2tYrZYW4ZSKkS+LCIKarr5+pGoBncmGWpDJpuIUqxIudydGjUK5LmM1
+      GWiIVZqKBqNBi9ysE4tGaCgq2jq6seoUCjUZm/nGRymTjGFydmLQQD5fwG63gyJRLNWwWkwU
+      skmypRqOdjd2o5poJEZdUnC43K3jyE1S8Rg1RUt3lxuV3LilLUKjRE0w4rAYqBaKaGzWm9ZC
+      giAgbK5J7nXcMQo09da3ubqRB2r849f/kXx6g2//+C0+HC1cnLxEqvRhdjjNN/7mtVuO+fPv
+      /E9iZZHZ93/IO5Mb/OhvvsHdebL96rBw9geMejIfv+FtkPUvE8i1QoyrS/NUaiIzCwub/yuz
+      vLrWqm+wCc/SNOUGBBYm8ERzyJJILJGhWUqysN4KeRbiATaiLdmiWEyx7AuhyA0mxsaplpJM
+      e24w68hlro5exBNoObkFFqdJVCRyYQ8bqTKJwCLzniiyJBGNJaCRY3rRjyI3mJ28Sqkm4Z25
+      QiBdppqNMD692mqLN9xqSyLIRiRLdGmJ8YVFGgpsTM/w8c6q9wYajQbpdPqm5MY7EmFHHj3N
+      dy6Ps09lxrT7UaybXSU0f4HRuRCiWGPPyWcopxMUy3l+ce485UaDUCTFK//+ReRGhfNvvsrY
+      WoP/9CdfQa8RQKWjb2CQbGqBUHYzZq9ILF4+y/hiANng4pEhFXPVHp4ckHhjocSgoUCiUCMe
+      iXL8xc/xxj/9PU+fehy9w4rPt0Gz0URn62SvPcWl6j4+M5Dje5MFdmvWSZl2klq4yM5P/xGW
+      2ASeaJHImp8dw7/cDezduo1LC176jd2IKhvWDxXnaFQK+P1+wIR7oP/arwQydR45voWpqWm0
+      bQOAQHhtlnOZEOVsht6HTl4/htnWRmenm2Q4hvShqHLM62H46OMUQgHqg+3s3L+PmakrqB0O
+      9u50MjXu4eDxh/FNX6GodQFGjBYHnZ1uspkcKA0iBYlTp3ciCAq5989T5VZHOUFlYGu3jTV/
+      /L5ShcmyjE6nuzsizDmwD31mlbfOznDy1JHrv89dfJtwRYvT6cSo0yJWKzTzMcY2ynzulc9i
+      kavICqi0Jk49+wzkEjSv+f81i4yeO4vSfZTPPbkPaDklj07MYXM68SwusOXQCQJTo4yOXuXw
+      iREujnl47sXPM+QUqDUlahUVB0+fpr0ZIqXdwiuff57A7FXyxTK1RhNZalAVGzTEGs7+ER47
+      0Is/lGBiYoZHnv8Cx/d8nLvdnSEYnNibOTzBKO09fag+9HaYXX2cPn2a06ePcCM+okFR6iha
+      M4ePHaIQaxF6vdsf4vTp0zx8cPdN04tE0MPc/CpD+w5j+eAMQ2kwt+whtDqPP7hOIldDZ2rD
+      5dTgdPejU6vQKDJNWcXIwYcRS62xNRPd4Bc/+wm6jmEsRj0ojevUl4SCWhBa6Sm0XhBBpQIB
+      2nqGUDIBctX7Rxem1+tvGqHhIzqASmtiR5+Gi94a2ztu6Cj3H3+UeimL1WpFdS0VzdpFjxzl
+      zXcvEsl9hM+m1s6Tz73AI4dHrqcdyFKDUrVOm9PRaozOyaPDWi4mTGx3tbGnX8OP33wHT6g1
+      7KPToRWgc8dB6r4rvPHzNzH27aK3v4/w3BhXZpa5JV9PrWPHQAdv/+J1ljZi/EuwZYuD2bkw
+      rk3rx1I6yuzsLKFkgVo+yezsLLOzix9wrRDY2uXgwug4s7MLKLqPDh12D+/m4aOHcdla8/5U
+      xMfs7DzhwDr2ocM89thjPHvqCPFEEoXWuk0QBBBUDA51MHFpjJm5OUS51a06+rbz4mdfohJa
+      JJqtMOC2Mnr5KhPjl9B0bMFiaUNVCDM1Pc3iRoKODvtms9VsG+5lIxAFZJLxlnNFIhK5r6SS
+      H8kD1GslijWFNrsVRW69qFazkUI2Ta0p4HA6kcQyGoOOkDeMRt/gtVff5Kt//mdo6zXsdjOF
+      fBmLzYJKECgVChgsVjSbn85SPo/RZqNayFKTNOg0YLFaWHrnn1i2Pcbnjw0Q9q0haXSc+fH3
+      OP7Kn9JjlLHbW3HrWrlAvizicLah00A6mUKjN6DS6NDRBJ0JtVSjjg6DWiaTzaPVadGbbBh1
+      d7eA+7AgRpGbVKoNTGYjKArlYp6GpKAzmlFJNWp1CRCw2h3IjRoanQEBmUqpRENSMFksaFUK
+      9SbodRqkZgMZFVqNGkWWaEgyumsEk9wkXywhy6A3GNBoteg2t6s3ZXQ6LVKjDioNGrUKRVGo
+      VUrUGhJGkwWDVqBWlzHotUgNkaaiRqdVUS4WaaLGZjWjEgSkhkixXEFrMGMy6JDqdQSdDjUK
+      5WIZg9VMo1pDpzdQr1VpyDLae0wQ869cI0xidWqcufUE+46dZkdf28fvcgeU00HGFuM8/uhh
+      1IJA1DvL2PQafSNHObJ7y699TvpAEXYrHijC/g3hQY2wW3G/KMIe1Ah7gF8K91MqxB0XwRPv
+      v0G8LAMKo2+/QSge4Mz5yesRhHLCy/mptQ/tJXH10llSxTpnfvQjbrsclpuc+fG3+Kd//g4/
+      OzOK+BF1qLwTo3juor7XrwuRDR+VzVz+ZHCDXFXE5/XRBKZH3+Hdd99jbjVAc1O8k4v7mJhf
+      b1kbigXWgjfUcRs+72YNLoWNhXG88Rt3S1Fkxt9/fbMeWLAl2JFrXD43SnHTQnFtdox3zpxh
+      9Oo81YZENe0nWQa5UWTFE/x13ZJ7CteEWHcVBlUKQcaXwtDMcmZsFZtODSigyAQ9C1wdu8jV
+      5QC1YoqZqQkWvSEURWFxZoJcpdEKpykSEd8qE5PTJPObOUaKxMpKgKc/9wVsiVHenI0RD3iZ
+      mJgkli0jljKEk1n8a6t4FmYJZMtkooFNP8vfLExKjpVIEZBY94fQqQTCwQgykBMFnnj8FBYx
+      wrwvCcgEA1GSsRANRYF6icAHfDqjkSBNWUFplIjmRIIe740TKQo1lYknn3gMJbJEXIRyMkyD
+      Esu+1jGSxRqPnn6CrW0KS74YYi5GtiaxNDWD3nGzt9ADtFCpVIjFYndXI2zHoSP4ZmfIemdp
+      GzmKUC0ws7RCfOl9fnB+DeNmxfJSLotKb2L8tb9nOXtjrrx4dZKqVCdTrKEXSnzz2z+6JXwm
+      1kS0asgWypiN8A9/9y3ivgm+/vW/5/zkMqIM1bSX7/z0PCr1b56ScWzZRt7vQapkkAztGLQ3
+      t0lQaRjaM0IpGkOqFSli5mCvHm/6zuUn86kEls5tWOQCldssNSRFQKOCcDzN1oeOU4vdPOpK
+      soJep0WRJaYuvktR38WW9tuVS3oAg8GAxXLzvblzjbCO7RhKfs5fWebwkb3Xf1+ZnmLviScZ
+      3tKNWoDgyhTnL10mngiRLd08nWmKJcYvnGV6zkM6nbmeRlEtxPjJ97+PeuRFnt5u4uroWa5M
+      rbRoasDRv5d/98UXsWlrvPODH9J38FHsht+CBZfailUosx6O09F1ewtDuVFDUmnIxzdYX/My
+      H4iwPLN8++MpCoG1JdaW5whHvCz5bzjRpQIrvPfeeSzb9uNS1VhbXmP66mUC6+ukxJZZwZs/
+      /jajGw12bulAUKnZMbIbsZCl8WDRflvcLnfpzkSY3sz2XhVnVyvs7rohzRrcuYu5sfdY9vhp
+      SgqRUJjBXfvodN761WmUc+RlPSO7tra8JzdhtHXx0he+xJPH9iLXK6QqCnv3bEe/6XFpNBs3
+      jawMvPiHf0ro/e/gTf92RKeGB2xcmQ7R0XGzTrZezrPu9XDlyjLDOwcIhbM8//nP8dSzn6NH
+      m6MitxLx1td95EotrZki1cgLLj77mWf5zMuvUA6vXne5cG3ZyZNPPs7OLW7KuQQdu47z3NNP
+      8ZlnDhHwxdBaO3j2pS+yy15jeaPlBmF29rGnz8TEou++tDH818BHRoEq+SSxvMRgfxdKo0oi
+      V6bT5SS4voasMWKwOnBqm/giaZw2I+b2Xmq5ONY2N7l4lPbebpIBHzXMmAxq3J1uVIpMPBrD
+      2dXTkiEqMvHwBoWmAYtewGk3ka+p6GyzUkjFwexEVc1S09hw2X7zUQdZEkmly3S42xAUhWKx
+      hNlmJRMNUKzJOFydOCwGisUiVpsNAaiWCqj1BpKxKPWmgrOjC7VSx2QyUamIWK1mlM1jWW1W
+      UBSKxSI2W4vwa4hl6ooes0GDLDUoVxugNDFbrAhKk2y+gtWopqmxYNQoZLN5HE7Hvxpnci9G
+      gT5YI0ylUuFwOO7dGmEP8JvFvdgBbgdBEG4WxDwgwm7Fgxpht+LaV/Re0gTfCQ9GgI/Bg1SI
+      W3E/pULccRE8f/k8GbFF1MyOXSB3F++AoigkA0v88NXvMbXpcXOHLa8TEpJY4urV2bvOMPRM
+      XyRR3qxk/oG+G166wj//87f50evvka827rgIrBcjXJldv8uz3Yw4X90gAAAXd0lEQVRENHLd
+      QjCfiFEUmyhynYW5BaqbBFlwbYFkSQRk4pEw1yyAFEUm7FngwqVxUsUaitxkdfYql8YnKVQb
+      KLLEwsRFzp07z2ogQaNW4PLFc7z//vucO3eBUDpDOJS46brC3kWi2Ra/UsuGWdpcDJfTIbJV
+      SIXWOHv2LJMLHhqSQmR9gbNnz3L27FkuTS4iyQpINWavjHLu3AU84VRrxJMlVhamKYn3VzTp
+      2mh+V0RYMTjL2FIMpAI/fXMcg6pBPBIiEIxQlxRKuSzZbJpgKEK92TpgITLPP/74Ms+89Dm6
+      bWoUuUkyGiaSyKAoCtlMhmopTyzm46/+9//M7EqAWiXP2bPjNOQGsXCQQChKvSlTyqXJZNIE
+      QlEaskKzXiUcDHDx7Z8QSJf5r//n/8bF+VXK9dZD8k+dxXXw0zzcJ/H177yDWM4T8PtJZArI
+      kkQmk6WQSZBLbnB2fJmmWCZT+GR+N5pKAk+8DMh4fD7UgopqNkEqHsIXbzHWxVycufk1FGTC
+      G35azVOIrE4Ta9o4fvQAepXC0tWL4NrK4T39XB2/Qr0pka2rOX3qJI3gDHHJxsOPnEat1XLq
+      1CP0tevwr0c+UA2+ji8UJ+TzogBiLoJ3PUiu0qQUXydZgVgqy95DJxh0KIxPLtI5tIdjB3di
+      tndz8tAIapUAUo2CZOGRR09QCS0QyddpVhMEQ2kCkeQnuj+/7RBFkWQyeXeKsN1HjvA/35+l
+      YDVj3XkEpZxlbdVDMbbCJfdpzKs/oTB8HLX3Km2PfJlnHuplY26S4aOnsOi1WDrdzJ37MZNx
+      DZZKkPbDzzP9+jdxtbmxDw1TLJeJxeIMdPS2TlhJM7uyTjmyiDD0JJr5V8n3P4G09h6Dz/4x
+      lanXKNm2kivVaDZqlEtlErEYteGtN+mRdTo9ilwjurFGMFNh7Pxr/O6ffIVv/D//N929fRw6
+      ug+lWePNH3wX19HnOWa7jfvWHdA2MMTilQ3ktl6aGgcGrUAomWDrgSMEvUHocyLo7PSrq/gz
+      HxTSyyTSVXYc7UOjFbBq6+RFHUe6HGhVAh0WLyWx9VCUzdJHH1cmqZrwYenbiyrjo9xUABWD
+      g91s+AJ0fyj809a7FUd0jEqDW3yOrkEQBPQGA4ICUW+AnUcPEfVFkAY7+S3gIH8l0Gg0n6BG
+      WOcu1Dkv4xNLHDiyj0Y5y9LKKqlikUgwChjYsfch9g51kS+2Fs5qlQrpuo6vweycl0cff5pn
+      Ht/P5OVZaCqcfPHf8eJTJ+jt6ubI0UOYN7mJaiXP2uISmWyOYCyBSqNl+54D7B1qJ53KsrxR
+      4lPPP8Vgpx29uZ3uni72HzlKu/lGH7705g95dzHPVz/3BMmgh9X1INlQlJwkI2gsvPL7f8IO
+      tx7vxBmWqu0c3tb1Ce+gHaNcIJxI4XS7EZQmq8trrC4t4Vlbuc7k9u7YR3R17ibTQUGQka9/
+      vgVAvv41lxUFAYFcdJ3XvvtdspZBuj+mX64trxP1L7IR2CC0mS9ldHShE9Pkb1PtUpY3T3sb
+      pMMezp+/SNPcS6dDw4JnHd/iPOveletu1/cDbpe9escOoNZb2dEt8PZSkf19NlIbq6i7d7N/
+      x8Ad48tDB08QvPoOXn+QlfUIwwMdzC8sMTO1zPDu7aAzYjfrAS0Wg0wwHN2cIkBibQr94BH2
+      be+/RWqo0upwmGVWVzdIZFt2ik6LnkAgTLV+4zU7+ezLfPHlz9DbZmZuYZ1jp07itrdCdXqz
+      DeOmhnfbw88yog1xbi50l7fuA9fYZ+bqbIiODieNcgrrlkM8/shJPvvYDlY2mVxBrWeoQ4f/
+      eoKbip6uNhbml0glE6Tzddx2NQtrfuIhL9m6DqtBg6N7mM/+zgtUwutkK7dasTTEKtlMhnIp
+      S1nXydOPneK5T50ml4hvdiYVO7b34fFsXpcikc9nCawtIZq6sNxhvG/v3cap06fYs60POR/C
+      se0kj558hE8d2UEomW/JXmWoVip37aR9r+Ajo0CFhB9PQuLAnmGUeonpqRlsnT2o1RZMUgF9
+      dz/qfJyixklvu4WWd3+I2SUf3dv2MuQ2sTg7TVXr4tDeITY86/QPbUWnUVFMBZlZCrP/yH5i
+      4ThDg24mxyewuXswWBwY6mn0HcMI+SBVQzc2JcP0oh+H3UTv9v0Y60kmZlfYefA47WYNmdAa
+      TfsgbmtrkM9EvCwF8rjtVrqG+4kFwmzdvhW5msEXrzPcqWc5VGLP9v47XT5waxRIalYJR/L0
+      b+miWclRwYLdpEGRRbK5Olq1hMnmQJBEwpEE3X39aDYJv1Q0QCxXY8vQVmwGFeGNdfJ1gaGh
+      IQxagUw2R3tbG5JYIlmU6XLZSKXTtLe1IQgS/lUPBbGBo70Dk9lKu90MikQmU8BiEGhoHZh1
+      EA96MXduRS5E8EfTmOwdDPV3oRJadZQLlSZO+yZzLzdI56q0tbVIO7GUo66xYDVoUJpVMmUZ
+      lZjH0NZDIRGhvbubWrl8z0WBPlgjTKVSYbVaf5WKsPsXD8Kgt+J+CoM+IMI+Bg9qhN2Ka1Ui
+      74d35cEI8ACfGPdTKsQdF8G5qJdAsrWIW1+co/jhWYCYZ2L+w4qw20NRZNYXrvDWW+8SSP5q
+      FV71SpZzb7/BL956m2Dqo+L6dRbnl294FP0SaFay12tvFVMpyo0miaCPVLEGKGRiCRpAPB4H
+      QG6KrC5MMz2/Sl1SAJGVxfVWWnizQjx1o/xQIRniypUrrIdTKArUihmmJ66wGoi35q+5DKXN
+      6E4uFUNsAshEfF6y5VabCokA4+PjTM6tUJcVpFqBqYkrjI+Ps+gJt6JSioRveZbx8ct4Qsnr
+      kaiN1QWuaY4yER/j45eZWWqp1sRqgWKl0Tpf5ANOdfcB7tgBgnPnGF9rESEXfv4D4jUZURSp
+      VSvUxDpKUyQQSaAoCnWxRrlSRVYUmvU69bpIuVJpMY1AZuU8PxpPcOjALgqZNIqiIFYrVKo1
+      Gg2JZr2OJCtIzQaNpkSzUW/5uNcbrSrlYp26KNKUZcRaa79r0Yhyxs/oaoaj+3fwz//9/yMt
+      ylSrFcqVKpKs0BBFmlKDWr3Iz3/8BmKzdR2/TDSjnvFvEmGQWPeQqdWJe9eYXl5DUhR8C0vU
+      gMWlRVAkZsfOI1m66bZKnB+fRVZKrE1PsRYqQCPL4tqmR5GY4tJMgB07tqNqlmk0K5w7O07P
+      0Hbk6DyzoQKJkI9UoZVGHfQuUKyDXK+xvDzH2kaLIEtG/dh6ttPnFBi9skCjEKNh7mZkZITB
+      vk1PV7mOP5xnx8huaoFp1hI1lGqMldV1ltdbzzu05KN7ZDdubZ7LC0GK2SjxTJXY8lVi1d8C
+      XcYviVqtRjgcRhRvCJTu/mrKMf7zf/kGp04e4crEKn/+5y8zM7XEk3udfOuH52m3gWbLIzgC
+      Z/AYh9GF5+g8/Xu8cKgPtU5PKbVMqnKIXdsHiS1f4rtnFuiz1claj9GbHKX9+a9hW36TGcMh
+      9upCeCIZPP40f/S1J/m//t/X6GszcujYPmZXwhjlEoPHPsOpvX0AaPUmnO2dWDQ1sskYlybG
+      yEb9OPe/SPb97yJs7USwDwIQXR7j/aU8X/vC8xh+Bd6uGmMbnYYaoczNo49SL5HBweMDnagU
+      F6HAOYqNPjoGdpMPLiE6e29srDagrheIpPIM9PVCZhn94GHcbQ7cD5/kvfcmsbpvXXCWMwGc
+      w0epp0M0pEEQBExmCw6DgC4aAFqp2LmcgsHiwGRolQhSa3RYrBZcHU7S9QZBT5Adxx4l6vUi
+      04GACrPVgll2ofZJoEgk/CtsqHQ8ddxFsXhvFs675gf0QdxZECOo4EMZNRZ7F6ee+BTt6jLX
+      HPM8k+NsOfEcX/rdLzJ37gygY9fBh3ns8A4S6VYZTvvQw/zxl5/Ac+UX/O33zjA1McmJ51/h
+      iQNDVG5ZX8pUiyVK1Tq5VJhCpUlD0vK7f/a/UPJMkK42UVQChfyNhxBeusL3Xv0BOx5/hU59
+      jUKuRJM6/vUQIDJ87CW+9uxR6pkw3/jOO3zmpecw/ArpzcGdO/CvrN50txQFbrjwtep4KQoI
+      GgMDnSZ84Q8Y9GosPPHUabT1HOcvXKJalxA+UAPsw8/hGjzzy2RycaIhP4lSHbleYfy9n/Gj
+      t6+ya2QEgHq9RrVaRWzcyLYqJDd4/8x7rOf1bOs2srYRILHhJR7yk6lKyHKRsz//Ca9f9DKy
+      q6+lUa5W+YjX5Z7AJ6oR5u4fJLi0SKmQIFI102m6/Xaunm4ivg3SgRWMHbf33cyEVsirXDz2
+      2BEiG0GcNhPRWJJctkUcaXUClUqVeCIFVDg37uX555/BbW3pjs1OF1a9ms6uDhxdO/niF7/M
+      we03WNze3Uf58le+yqdO7CG0cAVN3yFO7N9K6wNvoNPdUm/p2nr53ZeO8KOfnkX6JaZABmcn
+      mYAXUawQLlSw61qcg6Czs9XRwJu6UVVMpTdjbWTwxfLk4xukZRubl0PnwDayoXUa16jhWh5/
+      osTA1h0YhDqKc5DK+iSFqsj65Ci2wREcNhOhSAyxkiNV1GDW18jh4OD2QR45tpuNjTgqnYmH
+      H3uWPV06wqkcKNDRvYXh4WG62+3Xu5GtY5DHn3qSk0f2oSonUbuG2b51mP0jQ8SiKVQqK6ee
+      fY4hB8TTJVBp2LLrACPOKhOrv+q6z79Z3LFGmKl9C52aDJeurvKpl1+h02LEZLXT0+XGbLHQ
+      1dOH02Zn94GHsdRCTK2LfOkLz2Ixm3B1duGwWLC3u3HZjei0WhYmLrLoL/PyF15k+84RkqsT
+      pLNZknTx2WePsjo5iWvrXga3bOXAsJUrSxEOHDxAT3cPbQ4nvd0uOof3ok4tM7ESpHdgGKtR
+      h0qlwWZ30tXRckJo6+wjtjaFpnMHO/p76dvSRWdPDwaVGrPZyu6DxzE2UpjbelqO1Z8Ags5K
+      u67G1NwqA3sO4rYb0Wi1mCxm7O1uVHITd5cbo1aHzeagq7eXqGeeSAGOP7wfrUqFVqvHYrVg
+      NxnR25y02Yyg1pCPeFlYDTC85xBup52+Tjvz0zOEMwX6B7fT09OFUIwy74mw99BRbCoRrbOX
+      TpcDs8OFWqrhaGvDbLHTOzCAmI1jdLgIeRbwbfjJiwKdHQ4EBHT/f3vn+ttWecfxz7GPfWwf
+      X+NLbMeXtEmbtrSlTYVou7ZoAYmtnWAU0KYNQUEMpGlvJqbxetKG+AvYJvYCbfCCaZumXWBj
+      pUmbllZtCMFJapq7kzhOHCe2E9+Pfc5eOB0UCpQNNsr4vrUt2ec8P5/n+f4uH0nCZrMiALWq
+      gtvnp8Vpx+Fw0NDA5bRjdboIh8Lkl9M4PW7MJgveYJRGIYPBZEbUf8kI+4+1Pn2JU0kH9x7a
+      +r/6Cp97afUSi6s1Ar7PD6v3i2SDXhMAhULhC5Hc+FKfrSqVCvqb7AlwPbW2tl6bCZZlGVm+
+      8fLg/wd9yQi7vkRRvO6h8mbTNQHwXnhAYizG8lrzxjt8YbZEruV93YhySwuoVjctsgRqjelE
+      inAkgvgxDoym1hi/fJmSJtG5dQtW6dPznourSeJTKfRGma5tW7HcwJj0q9dlZXGW1Y1EmCQ7
+      CQU85NJJVot12kJhzEYdK6kUUosPqySiKhVml7JEgz4Wk7MUKg0cHj8+l5n19SpWm4Xyeh5B
+      slItreN02kinlnF4fUh6jfxaCbvDxlomxXKuREtrEJfVjCBAtZhjPpXB7HDj97jQlDJz8wuI
+      spOgr4VGtURNMyKbDZQLOXQmJ5II2eVFRKsbm9lArZglsZBBZzARDrUhojA/N0+1rmIwO4iE
+      fB/p+7wfNnEz6kN/n1m2M33hdS5nqsjmfy/Sh0/9hcENnhVqlVhsdGMe5kfr4p9fZGhJQayv
+      kcp8up5zYvA1zk+to2XH+NXLJz/RZw2SGb2ySmKpjFkysjIdY3R+DUlX59z5ARo0mBkZYHiq
+      mQleSc7Qe34AVSkzMjGLLJuZiV1gsVBiYmyOhlJiaGgEVRAYHhkGaowNXuJyYhkaFUZHx1EK
+      8wzEFzFLBlYyG9ZpvcClwVGMJhPFXIZqvc6ls+eo643k5+KMzq6STydIbHSpLU7GyJQAGsQG
+      LzI+2ZwdmkteIV0RMTQKXHwrTqOUZX6lgCw3OQFfNCmKQiaTubGOMF9bO0Gvm2I4SsBtpe+P
+      v2Yiq1KqGvnOffv5+fMvsWNLgMuJBre2wZS2iW/tqPNc3wLb5HWEjjsJA6pS4MVfPsehBx5k
+      bnyK4uEJfvbM7zlwMEgsJfP9b27jhZf78HhtHL73YSJ2gWq5QNkoEO26FavZxPDpP3AqnkfI
+      zLP/oSe59PJLPPT0D/ndT5/ha0/9gLf/9ldWVpZR/Qc45J3n5GiZ1cU1eno2MRxfoloqc/+J
+      x/HLekCHNxhh9x6BP53rJTF8jv7YDHMzizz+o6fwfkSs211exEaeVWS8bgfnRnPcfvgIRkGg
+      nkmyUATJFaGyvoCmBVjOFQlsuFOSbCcYCCIWF8iX6zRqFeJvDRLauQ/Z8O7/kK11M7X0FOXw
+      bgAEQU+5VMBo7cDvsDVzC4KORqVMQ28iuimAWJyn6uqkMxpGC3voPxsj0G774AJYncYS7kYr
+      LFFVNQShSaMMeXWkVmIAGE2WJv1HNN7krv8HpaoqkiTdWE/we1Wv5rgwvs6JR09wi2mOwUQJ
+      2R3hngcfwCbpuef4N2Ath9pQCW7Zw3efOMH4G71AlVdf+AXWvUdpd5tQlGZpg+wJc+z4MapL
+      zboSnV5PYPNOrpKYDj/4JDutWX7z/HO8EU9y8nSMR554lC1+C0pD+1cEK7Uamg6MogG9RebK
+      8NuojTr5upMfP/0wb/6jF1VnQKivMZ++CuWrM3j6VV76bR9333c3OtGIXhBQs1eYXvmEFxQB
+      cWMbYDAI1BuAoKNNFkis5KmKNqzG5uu5hSnO9PczkZOIuo0UcmkWshVs5vcdJAWBW7YHGY03
+      m1oEOUDP/m3MjsU49+Zos4RDb+HQHQcpp2fo7z9PvlRDv3EgFQQDgnD9EQNj8QSioUZpPUM6
+      12zMH77Yxyuv9dHWsR2A1aU5xsfHmU39t/mdn70+ESPsmjfpTVgokS2WSWaqeB0f9njUaNQb
+      5JNTiM4AIHHn/ceZOPt31pXrb32Mciv3fft+lLGTvB5vrsDE9BRbb/sqd93WzujYLBZRJVeo
+      UCyWudpOWCsXWSvUyC2+w5VlM8d6DmDaWEttkTB6nYjdYWf3wbt49PHvscW7UUogiHTf8XUe
+      eewxDmzzc/b1Pvb0HKMr5Aa1xttDQxSrdWKXzlP8mFEVYYeO0cQK9WqBK+kGgY0su7+znfGB
+      izha3k3WOYObOXLkCAdv241RBw5fhDu+soeRgcGNQrl3JTnCmMrz5Goa9WKWgiazp3sf9cJq
+      c9S6UiGdK9O1ay9ei0pZ8lJbGKNYa5BJxBFdYUwWmfzqMg1VIZ2tYzVVyCoiLqOeoN9DaimD
+      oBPZue8gHT4b68Wm++ePbqW7u5vtm9v4f9CHJsIA0FTsviAem5WOqIf+U6eJ3n6U3dGW5sGp
+      zY+giYRDATTBiFOX5ZU3RqhU9Rx/4CgWgx53+w52+fWkFQteu0w4GkLUm4lGW1FVkUjIxcWz
+      /eSNbfQc2IVJFFDW0/T2nmFZdXG0Zz+7toU403ue5cUFgnsPc4tPYHA0SXRThO17ulFSYywo
+      FjpDfiKhICa7F7/bTkfnZoYvnGEyVaC9ox2T2ORoWVx+Wp1mQMDtMjEwMEKoo5NQJMLc+Dv4
+      Q1EmR97E37EdA+r7CDEaOtGMXZawe/2sJcd4Z2qRHd37cJgNaBpYnV6EWoVgewhRoAmzFvQ4
+      7e/Zlmh6nG43DrNAsSFikUScTieapsNqt+JwWKnVdARaXUzHY0zMLtG181ZsZglBgJXkFCPx
+      SRyhLUT9bgJemdjQENPzacIdXbR6PVBME4tPEOrai0dqoLP6iIT8uDwe1HIVu8OK0eIkEglR
+      WE4iOdykpuJMTidI56r4/W50msbs1DTmFhczkxO4XC4URUGn091UhJirHWHlchlFUTAYDDz7
+      7LM/+SfaRc502XLk1AAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
